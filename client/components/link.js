@@ -10,13 +10,11 @@ const linkStyle = {
 }
 
 
-const divLink = (props) => {
-  return (
-    <div>
-      Hello
-      <Link to={props.path}> {props.name} hello </Link>
-    </div>
-  );
-};
+const divLink = (props) => <p>{props.name}</p>
+
+divLink.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  path: React.PropTypes.string.isRequired
+}
 
 export default divLink;
