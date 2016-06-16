@@ -1,20 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 const divStyle = {
-
+  "backgroundColor": "red",
+  "width": "50%",
+  "height": "50%"
 }
 
 const linkStyle = {
 
 }
 
+class divLink extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isHovering: false,
+      isActive: false
+    }
+  }
 
-const divLink = (props) => <p>{props.name}</p>
+  handleMouseOver() {
+    this.setState({ isHovering: true });
+  }
 
-divLink.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  path: React.PropTypes.string.isRequired
+  handleMouseOut() {
+    this.setState( { isHovering: false });
+  }
+
+  handleClick(event) {
+    var active = !this.state.isActive;
+    this.setState({ isActive: active });
+  }
+
+  render() {
+
+    return (
+      <div
+        style={divStyle}
+        onClick={this.handleClick.bind(this)}
+        onMouseOver={this.handleMouseOver.bind(this)}
+        onMouseOut={this.handleMouseOut.bind(this)}>
+        <Link to={this.props.path}>{this.props.name}</Link>
+      </div>
+    )
+  }
 }
+
 
 export default divLink;
