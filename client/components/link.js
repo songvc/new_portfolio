@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 const divStyle = {
-  "backgroundColor": "red",
-  "width": "50%",
-  "height": "50%"
+  "backgroundColor": "blue",
+  "flex": "1 50%",
+  "height": "100%"
 }
 
 const linkStyle = {
@@ -25,7 +25,7 @@ class divLink extends Component {
   }
 
   handleMouseOut() {
-    this.setState( { isHovering: false });
+    this.setState({ isHovering: false });
   }
 
   handleClick(event) {
