@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-const divStyle = {
-  "backgroundColor": "red",
-  "flex": "1 50%",
-  "height": "50%"
-}
 
 class divLink extends Component {
   constructor(props) {
@@ -30,22 +25,27 @@ class divLink extends Component {
   }
 
   render() {
-    // if(this.props.name.length > 1) {
-    //   return (
-    //     // <div>hello</div>
-    //   )
-    // } else {
-      return (
-        <div
-          style={divStyle}
-          onClick={this.handleClick.bind(this)}
-          onMouseOver={this.handleMouseOver.bind(this)}
-          onMouseOut={this.handleMouseOut.bind(this)}>
-          <Link style={linkStyle} to={this.props.path}>{this.props.name}</Link>
-        </div>
-      )
+    const divStyle = {
+      "backgroundColor": "red",
+      "flex": "1 50%"
+    }
 
-    // }
+    const linkStyle = {
+
+    }
+
+    const height = this.props.height;
+    divStyle["height"] = height;
+
+    return (
+      <div
+        style={divStyle}
+        onClick={this.handleClick.bind(this)}
+        onMouseOver={this.handleMouseOver.bind(this)}
+        onMouseOut={this.handleMouseOut.bind(this)}>
+        <Link style={linkStyle} to={this.props.path}>{this.props.name}</Link>
+      </div>
+    )
 
   }
 }
