@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import normalize from 'normalize.css'
+import normalize from 'normalize.css';
 
 import FrontPage from '../components/FrontPage';
 import Blog from '../components/blog';
