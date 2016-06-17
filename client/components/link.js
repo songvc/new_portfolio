@@ -1,49 +1,42 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import Radium from 'radium';
 
-
-class divLink extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isHovering: false,
-      isActive: false
+const styles = {
+  divStyle: {
+    "default": {
+      "backgroundColor":"red",
+      "textAlign":"center",
+      "flex": "1 50%"
+    },
+    "@media (min-width: 320px)": {
+      "flex": "1 100%"
+    },
+    "row": {
+      "backgroundColor": "blue"
+    },
+    "column": {
+      "flex": "1 100%"
+    }
+  },
+  linkStyle: {
+    "default": {
+      "height": "100%",
+      "weight": "100%"
+    },
+    ":hover": {
+      "backgroundColor":"blue"
     }
   }
+}
 
-  handleMouseOver() {
-    this.setState({ isHovering: true });
-  }
-
-  handleMouseOut() {
-    this.setState({ isHovering: false });
-  }
-
-  handleClick(event) {
-    var active = !this.state.isActive;
-    this.setState({ isActive: active });
-  }
+@Radium
+class divLink extends Component {
 
   render() {
-    const divStyle = {
-      "backgroundColor": "red",
-      "flex": "1 50%"
-    }
-
-    const linkStyle = {
-
-    }
-
-    const height = this.props.height;
-    divStyle["height"] = height;
-
     return (
-      <div
-        style={divStyle}
-        onClick={this.handleClick.bind(this)}
-        onMouseOver={this.handleMouseOver.bind(this)}
-        onMouseOut={this.handleMouseOut.bind(this)}>
-        <Link style={linkStyle} to={this.props.path}>{this.props.name}</Link>
+      <div style={[styles.divStyle.default, styles.divStyle.row]}>
+        <Link style={styles.linkStyle} to={this.props.path}>{this.props.name}</Link>
       </div>
     )
 

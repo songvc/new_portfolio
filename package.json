@@ -10,6 +10,7 @@
     "flexboxgrid": "^6.3.0",
     "meteor-node-stubs": "~0.2.0",
     "normalize.css": "^4.1.1",
+    "radium": "^0.17.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-flexbox-grid": "^0.9.6",
