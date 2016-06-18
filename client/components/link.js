@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Radium from 'radium';
 
+const RadiumLink = Radium(Link);
+
 const styles = {
   divStyle: {
     "default": {
@@ -39,7 +41,6 @@ class divLink extends Component {
         <Link style={styles.linkStyle} to={this.props.path}>{this.props.name}</Link>
       </div>
     )
-
   }
 }
 
