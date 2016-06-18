@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Radium from 'radium';
 
-const RadiumLink = Radium(Link);
-
 const styles = {
   divStyle: {
     "default": {
@@ -11,15 +9,17 @@ const styles = {
       "textAlign":"center",
       "flex": "1 50%"
     },
-    "@media (min-width: 320px)": {
-      "flex": "1 100%"
-    },
     "row": {
       "backgroundColor": "blue"
     },
     "column": {
       "flex": "1 100%"
-    }
+    },
+    "mediaQueries": {
+      "@media (min-Width: 960px)":{
+        "flex": '1 100%'
+      }
+    },
   },
   linkStyle: {
     "default": {
@@ -27,22 +27,21 @@ const styles = {
       "weight": "100%"
     },
     ":hover": {
-      "backgroundColor":"blue"
+      "backgroundColor":"black"
     }
   }
 }
 
-@Radium
-class divLink extends Component {
+const RadiumLink = Radium(Link);
 
+class divLink extends Component {
   render() {
     return (
-      <div style={[styles.divStyle.default, styles.divStyle.row]}>
-        <Link style={styles.linkStyle} to={this.props.path}>{this.props.name}</Link>
+      <div style={[styles.divStyle.default, styles.divStyle.mediaQueries]}>
+        <RadiumLink style={styles.linkStyle} to={this.props.path}>{this.props.name}</RadiumLink>
       </div>
     )
   }
 }
 
-
-export default divLink;
+export default Radium(divLink);
