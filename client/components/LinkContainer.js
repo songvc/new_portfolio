@@ -4,7 +4,8 @@ const styles = {
   "default": {
     "display": "flex",
     "flexDirection": "row",
-    "flexWrap": "wrap"
+    "flexWrap": "wrap",
+    "height": "100%"
   }
 }
 

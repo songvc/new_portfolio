@@ -10,9 +10,12 @@ import Lab from '../components/lab';
 import Mixin from '../components/mixin';
 import Portfolio from '../components/portfolio';
 
+const rootStyle = {
+  "height": "100%"
+}
 
 const route = (
-  <StyleRoot style={normalize}>
+  <StyleRoot style={rootStyle}>
     <Router history={browserHistory}>
       <Route path="/" component={FrontPage} />
       <Route path="/blog" component={Blog} />

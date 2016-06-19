@@ -5,29 +5,28 @@ import Radium from 'radium';
 const styles = {
   divStyle: {
     "default": {
-      "backgroundColor":"red",
-      "textAlign":"center",
-      "flex": "1 50%"
-    },
-    "row": {
-      "backgroundColor": "blue"
-    },
-    "column": {
-      "flex": "1 100%"
+      "position":"relative",
+      "border": "black 1px solid",
+      "flex": "1 49%",
+      "height": "50%"
     },
     "mediaQueries": {
-      "@media (min-Width: 960px)":{
+      "@media (max-Width: 540px)":{
         "flex": '1 100%'
       }
-    },
+    }
   },
   linkStyle: {
     "default": {
-      "height": "100%",
-      "weight": "100%"
+      "position":"absolute",
+      "height": "100px",
+      "weight": "100px",
     },
-    ":hover": {
-      "backgroundColor":"black"
+    "isHovering": {
+      backgroundColor: "blue"
+    },
+    "isNotHovering": {
+      "backgroundColor":"red"
     }
   }
 }
@@ -35,12 +34,36 @@ const styles = {
 const RadiumLink = Radium(Link);
 
 class divLink extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      isHovering: false,
+      isActive: false
+    }
+  }
+
+  handleMouseOver() {
+    console.log("mouseover")
+    this.setState({ isHovering: true });
+  }
+
+  handleMouseOut() {
+    console.log("mouseout")
+    this.setState({ isHovering: false });
+  }
+
   render() {
+
+    const hoverStyle = this.state.isHovering ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]
+
     return (
-      <div style={[styles.divStyle.default, styles.divStyle.mediaQueries]}>
-        <RadiumLink style={styles.linkStyle} to={this.props.path}>{this.props.name}</RadiumLink>
+      <div
+        style={[styles.divStyle.default, styles.divStyle.mediaQueries]}
+        onMouseOver={this.handleMouseOver.bind(this)}
+        onMouseOut={this.handleMouseOut.bind(this)} >
+        <RadiumLink style={[styles.linkStyle.default, hoverStyle]} to={this.props.path}>{this.props.name}</RadiumLink>
       </div>
-    )
+    );
   }
 }
 
