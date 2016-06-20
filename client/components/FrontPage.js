@@ -14,10 +14,15 @@ class frontPage extends Component {
   render () {
     console.log(name);
     return (
-      <LinkContainer>
+      <LinkContainer layout={"non-nested"}>
         <DivLink name={name.blog[0]} path='/blog'/>
         <DivLink name={name.portfolio[0]} path='/portfolio'/>
-        <DivLink name={name.mixin[0]} path='/portfolio'/>
+        <LinkContainer layout={"nested"}>
+          <DivLink name={name.mixin[0]} path='/portfolio'/>
+          <DivLink name={name.mixin[0]} path='/portfolio'/>
+          <DivLink name={name.mixin[0]} path='/portfolio'/>
+          <DivLink name={name.mixin[0]} path='/portfolio'/>
+        </LinkContainer>
         <DivLink name={name.lab[0]} path='/lab'/>
       </LinkContainer>
     )

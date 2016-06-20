@@ -7,14 +7,14 @@ const styles = {
   divStyle: {
     "default": {
       "position":"relative",
-      "border": "black 1px solid",
-      "flex": "1 49%",
+      "flex": "1 50%",
       "height": "50%",
       "cursor": "pointer"
     },
     "mediaQueries": {
       "@media (max-Width: 540px)":{
-        "flex": '1 100%'
+        "flex": '1 100%',
+        "height": "25%"
       }
     }
   },
@@ -29,7 +29,7 @@ const styles = {
       "display": "none"
     },
     "isNotHovering": {
-      "display":"block"
+      "display": "block"
     }
   },
   iconStyle: {
