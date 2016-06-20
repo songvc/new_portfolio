@@ -2,12 +2,49 @@ import React, { Component } from 'react';
 import DivLink from './link';
 import LinkContainer from './LinkContainer'
 
-
 const name = {
-  blog: [ 'Blog' ],
-  portfolio: [ 'Portfolio' ],
-  mixin: [ 'Twitter', 'Github', 'Codepen', 'Contact'],
-  lab: [ 'Lab' ]
+  blog: {
+    "name": "Blog",
+    "path" : "/blog",
+    "color" : "",
+    "icon" : ""
+  },
+  portfolio: {
+    "name": "Portfolio",
+    "path" : "/portfolio",
+    "color" : "",
+    "icon" : ""
+  },
+  twitter: {
+    "name": [ 'Twitter', 'Github', 'Codepen', 'Contact'],
+    "path" : "/portfolio",
+    "color" : "",
+    "icon" : ""
+  },
+  github: {
+    "name": "github",
+    "path" : "/portfolio",
+    "color" : "",
+    "icon" : ""
+  },
+  codepen: {
+    "name": "codepen",
+    "path" : "/portfolio",
+    "color" : "",
+    "icon" : ""
+  },
+  contact: {
+    "name": "contact",
+    "path" : "/contact",
+    "color" : "",
+    "icon" : ""
+  },
+  lab: {
+    "name": [ "lab" ],
+    "path" : "/lab",
+    "color" : "",
+    "icon" : ""
+  }
 }
 
 class frontPage extends Component {

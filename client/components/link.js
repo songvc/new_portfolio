@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { browserHistory } from 'react-router';
 import Radium from 'radium';
 import FontAwesome from 'react-fontawesome';
 
@@ -9,20 +9,18 @@ const styles = {
       "position":"relative",
       "flex": "1 50%",
       "height": "50%",
-      "cursor": "pointer"
-    },
-    "mediaQueries": {
+      "cursor": "pointer",
+      "display": "flex",
+      "justifyContent": "center",
+      "alignItems": "center",
       "@media (max-Width: 540px)":{
         "flex": '1 100%',
         "height": "25%"
       }
-    }
+    },
   },
   linkStyle: {
     "default": {
-      "position":"absolute",
-      "height": "100px",
-      "weight": "100px",
       "textDecoration": "none"
     },
     "isHovering": {
@@ -35,7 +33,6 @@ const styles = {
   iconStyle: {
     "default":{
       "position":"absolute",
-      "backgroundColor":"red",
       "display": "none"
     },
     "isHovering": {
@@ -47,7 +44,6 @@ const styles = {
   }
 }
 
-const RadiumLink = Radium(Link);
 const RadiumFontAwesome = Radium(FontAwesome);
 
 class divLink extends Component {
@@ -59,27 +55,30 @@ class divLink extends Component {
     }
   }
 
+  handleClick() {
+    browserHistory.push(this.props.path);
+  }
+
   handleMouseOver() {
-    console.log("mouseover")
     this.setState({ isHovering: true });
   }
 
   handleMouseOut() {
-    console.log("mouseout")
     this.setState({ isHovering: false });
   }
 
   render() {
 
-    const linkHover = this.state.isHovering ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]
-    const iconHover = this.state.isHovering ? styles.iconStyle["isHovering"] : styles.iconStyle["isNotHovering"]
+    const linkHover = (this.state.isHovering) ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]
+    const iconHover = (this.state.isHovering) ? styles.iconStyle["isHovering"] : styles.iconStyle["isNotHovering"]
 
     return (
       <div
-        style={[styles.divStyle.default, styles.divStyle.mediaQueries]}
+        style={[styles.divStyle.default]}
         onMouseOver={this.handleMouseOver.bind(this)}
-        onMouseOut={this.handleMouseOut.bind(this)} >
-        <RadiumLink style={[styles.linkStyle.default, linkHover]} to={this.props.path}>{this.props.name}</RadiumLink>
+        onMouseOut={this.handleMouseOut.bind(this)}
+        onClick={this.handleClick.bind(this)}>
+        <strong style={[styles.linkStyle.default, linkHover]}>{this.props.name}</strong>
         <RadiumFontAwesome
           name='rocket'
           size='2x'

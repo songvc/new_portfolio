@@ -12,7 +12,11 @@ const styles = {
   },
   "nested": {
     "flex": "1 50%",
-    "height": "50%"
+    "height": "50%",
+    "@media (max-Width: 540px)": {
+      "flexDirection": "column",
+      "height": "25%"
+    }
   }
 }
 
