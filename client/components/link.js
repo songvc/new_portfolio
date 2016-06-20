@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Radium from 'radium';
+import FontAwesome from 'react-fontawesome';
 
 const styles = {
   divStyle: {
@@ -8,7 +9,8 @@ const styles = {
       "position":"relative",
       "border": "black 1px solid",
       "flex": "1 49%",
-      "height": "50%"
+      "height": "50%",
+      "cursor": "pointer"
     },
     "mediaQueries": {
       "@media (max-Width: 540px)":{
@@ -21,17 +23,32 @@ const styles = {
       "position":"absolute",
       "height": "100px",
       "weight": "100px",
+      "textDecoration": "none"
     },
     "isHovering": {
-      backgroundColor: "blue"
+      "display": "none"
     },
     "isNotHovering": {
-      "backgroundColor":"red"
+      "display":"block"
+    }
+  },
+  iconStyle: {
+    "default":{
+      "position":"absolute",
+      "backgroundColor":"red",
+      "display": "none"
+    },
+    "isHovering": {
+      "display": "inline-block"
+    },
+    "isNotHovering": {
+      "display": "none"
     }
   }
 }
 
 const RadiumLink = Radium(Link);
+const RadiumFontAwesome = Radium(FontAwesome);
 
 class divLink extends Component {
   constructor(props){
@@ -54,14 +71,20 @@ class divLink extends Component {
 
   render() {
 
-    const hoverStyle = this.state.isHovering ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]
+    const linkHover = this.state.isHovering ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]
+    const iconHover = this.state.isHovering ? styles.iconStyle["isHovering"] : styles.iconStyle["isNotHovering"]
 
     return (
       <div
         style={[styles.divStyle.default, styles.divStyle.mediaQueries]}
         onMouseOver={this.handleMouseOver.bind(this)}
         onMouseOut={this.handleMouseOut.bind(this)} >
-        <RadiumLink style={[styles.linkStyle.default, hoverStyle]} to={this.props.path}>{this.props.name}</RadiumLink>
+        <RadiumLink style={[styles.linkStyle.default, linkHover]} to={this.props.path}>{this.props.name}</RadiumLink>
+        <RadiumFontAwesome
+          name='rocket'
+          size='2x'
+          style={[styles.iconStyle, iconHover]}
+        />
       </div>
     );
   }
