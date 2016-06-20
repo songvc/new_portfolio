@@ -2,54 +2,66 @@ import React, { Component } from 'react';
 import DivLink from './link';
 import LinkContainer from './LinkContainer'
 
-const name = {
-  blog: {
-    "name": "Blog",
-    "path" : "/blog",
-    "color" : "",
-    "icon" : ""
-  },
-  portfolio: {
-    "name": "Portfolio",
-    "path" : "/portfolio",
-    "color" : "",
-    "icon" : ""
-  },
-  twitter: {
-    "name": [ 'Twitter', 'Github', 'Codepen', 'Contact'],
-    "path" : "/portfolio",
-    "color" : "",
-    "icon" : ""
-  },
-  github: {
-    "name": "github",
-    "path" : "/portfolio",
-    "color" : "",
-    "icon" : ""
-  },
-  codepen: {
-    "name": "codepen",
-    "path" : "/portfolio",
-    "color" : "",
-    "icon" : ""
-  },
-  contact: {
-    "name": "contact",
-    "path" : "/contact",
-    "color" : "",
-    "icon" : ""
-  },
-  lab: {
-    "name": [ "lab" ],
-    "path" : "/lab",
-    "color" : "",
-    "icon" : ""
+const data = {
+  container: {
+    "nested": false,
+    "children": [
+      blog: {
+        "name": "Blog",
+        "path" : "/blog",
+        "color" : "",
+        "icon" : ""
+      },
+      portfolio: {
+        "name": "Portfolio",
+        "path" : "/portfolio",
+        "color" : "",
+        "icon" : ""
+      },
+      container: {
+        "nested": true,
+        "children": [
+          twitter: {
+            "name": 'Twitter',
+            "path" : "/twitter",
+            "color" : "",
+            "icon" : ""
+          },
+          github: {
+            "name": "Github",
+            "path" : "/github",
+            "color" : "",
+            "icon" : ""
+          },
+          codepen: {
+            "name": "Codepen",
+            "path" : "/portfolio",
+            "color" : "",
+            "icon" : ""
+          },
+          contact: {
+            "name": "Contact",
+            "path" : "/contact",
+            "color" : "",
+            "icon" : ""
+          }
+        ]
+      },
+      lab: {
+        "name": "Lab",
+        "path" : "/lab",
+        "color" : "",
+        "icon" : ""
+      }
+    ]
   }
+
+
 }
 
 class frontPage extends Component {
   render () {
-    console.log(name);
+    console.log(data);
     return (
       <LinkContainer layout={"non-nested"}>
         <DivLink name={name.blog[0]} path='/blog'/>
