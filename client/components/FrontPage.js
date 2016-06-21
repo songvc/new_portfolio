@@ -1,79 +1,157 @@
 import React, { Component } from 'react';
-import DivLink from './link';
-import LinkContainer from './LinkContainer'
+import LinkContainer from './LinkContainer';
+import Radium from 'radium';
+import { Flexbox, FlexItem } from 'flexbox-react';
 
-const data = {
-  container: {
-    "nested": false,
-    "children": [
-      blog: {
+const tree = {
+  "data": {
+    "flexDirection":"row",
+    "flexWrap":"wrap",
+    "minHeight":"100%",
+    "width":"100%"
+  },
+  "children": [
+    {
+      "data": {
+        "id": "1",
         "name": "Blog",
         "path" : "/blog",
-        "color" : "",
+        "color" : "red",
         "icon" : ""
       },
-      portfolio: {
+      "children": []
+    },
+    {
+      "data": {
+        "id": "2",
         "name": "Portfolio",
         "path" : "/portfolio",
-        "color" : "",
+        "color" : "blue",
         "icon" : ""
       },
-      container: {
-        "nested": true,
-        "children": [
-          twitter: {
-            "name": 'Twitter',
+      "children": []
+    },
+    {
+      "data": {
+        "flexDirection":"row",
+        "flexWrap":"wrap",
+        "minHeight":"100%",
+        "width":"50%"
+      },
+      "children": [
+        {
+          "data": {
+            "id": "3",
+            "name": "Twitter",
             "path" : "/twitter",
-            "color" : "",
+            "color" : "yellow",
             "icon" : ""
           },
-          github: {
+          "children": []
+        },
+        {
+          "data": {
+            "id": "4",
             "name": "Github",
             "path" : "/github",
-            "color" : "",
+            "color" : "green",
             "icon" : ""
           },
-          codepen: {
+          "children": []
+        },
+        {
+          "data": {
+            "id": "5",
             "name": "Codepen",
             "path" : "/portfolio",
-            "color" : "",
+            "color" : "orange",
             "icon" : ""
           },
-          contact: {
+          "children": []
+        },
+        {
+          "data": {
+            "id": "6",
             "name": "Contact",
             "path" : "/contact",
-            "color" : "",
+            "color" : "black",
             "icon" : ""
-          }
-        ]
-      },
-      lab: {
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "data": {
+        "id": "7",
         "name": "Lab",
         "path" : "/lab",
         "color" : "",
         "icon" : ""
-      }
-    ]
-  }
-
+      },
+      "children": []
+    }
+  ]
 
 }
 
+const mediaQueries = {
+  "@media (maxWidth: 540px)":{
+    "flex": '1 100%',
+    "width": "100%",
+    "height": "25%"
+  }
+}
+
+// <LinkContainer layout={"non-nested"}>
+//   <DivLink name={name.blog[0]} path='/blog'/>
+//   <DivLink name={name.portfolio[0]} path='/portfolio'/>
+//   <LinkContainer layout={"nested"}>
+//     <DivLink name={name.mixin[0]} path='/portfolio'/>
+//     <DivLink name={name.mixin[0]} path='/portfolio'/>
+//     <DivLink name={name.mixin[0]} path='/portfolio'/>
+//     <DivLink name={name.mixin[0]} path='/portfolio'/>
+//   </LinkContainer>
+//   <DivLink name={name.lab[0]} path='/lab'/>
+// </LinkContainer>
+
+// <Flexbox flexDirection="row" flexWrap="wrap" minHeight="100%" width="100%">
+//   <FlexItem style={mediaQueries} flex="1" width="50%">
+//     <DivLink name={data.blog.name} path={data.blog.path} />
+//   </FlexItem>
+//
+//   <FlexItem style={mediaQueries} flex="1" width="50%">
+//     <DivLink name={data.blog.name} path={data.blog.path} />
+//   </FlexItem>
+//
+//   <FlexItem style={mediaQueries} flex="1" width="50%">
+//     <Flexbox flexDirection="row" flexWrap="wrap" minHeight="100%" width="100%">
+//       <FlexItem style={mediaQueries} flex="1" width="50%">
+//         <DivLink name={data.blog.name} path={data.blog.path} />
+//       </FlexItem>
+//       <FlexItem style={mediaQueries} flex="1" width="50%">
+//         <DivLink name={data.blog.name} path={data.blog.path} />
+//       </FlexItem>
+//       <FlexItem style={mediaQueries} flex="1" width="50%">
+//         <DivLink name={data.blog.name} path={data.blog.path} />
+//       </FlexItem>
+//       <FlexItem style={mediaQueries} flex="1" width="50%">
+//         <DivLink name={data.blog.name} path={data.blog.path} />
+//       </FlexItem>
+//     </Flexbox>
+//   </FlexItem>
+//
+//   <FlexItem style={mediaQueries} flex="1" width="50%">
+//     <DivLink name={data.blog.name} path={data.blog.path} />
+//   </FlexItem>
+//
+// </Flexbox>
+
+
 class frontPage extends Component {
   render () {
-    console.log(data);
     return (
-      <LinkContainer layout={"non-nested"}>
-        <DivLink name={name.blog[0]} path='/blog'/>
-        <DivLink name={name.portfolio[0]} path='/portfolio'/>
-        <LinkContainer layout={"nested"}>
-          <DivLink name={name.mixin[0]} path='/portfolio'/>
-          <DivLink name={name.mixin[0]} path='/portfolio'/>
-          <DivLink name={name.mixin[0]} path='/portfolio'/>
-          <DivLink name={name.mixin[0]} path='/portfolio'/>
-        </LinkContainer>
-        <DivLink name={name.lab[0]} path='/lab'/>
-      </LinkContainer>
+      <LinkContainer children={tree} />
     )
   }
 }

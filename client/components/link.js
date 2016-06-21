@@ -7,10 +7,9 @@ const styles = {
   divStyle: {
     "default": {
       "position":"relative",
-      "flex": "1 50%",
-      "height": "50%",
+      "weight": "100%",
+      "height": "100%",
       "cursor": "pointer",
-      "display": "flex",
       "justifyContent": "center",
       "alignItems": "center",
       "@media (max-Width: 540px)":{
