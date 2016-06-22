@@ -35,8 +35,7 @@ const tree = {
       "data": {
         "flexDirection":"row",
         "flexWrap":"wrap",
-        "minHeight":"100%",
-        "width":"50%"
+        "minHeight":"100%"
       },
       "children": [
         {
@@ -102,50 +101,6 @@ const mediaQueries = {
     "height": "25%"
   }
 }
-
-// <LinkContainer layout={"non-nested"}>
-//   <DivLink name={name.blog[0]} path='/blog'/>
-//   <DivLink name={name.portfolio[0]} path='/portfolio'/>
-//   <LinkContainer layout={"nested"}>
-//     <DivLink name={name.mixin[0]} path='/portfolio'/>
-//     <DivLink name={name.mixin[0]} path='/portfolio'/>
-//     <DivLink name={name.mixin[0]} path='/portfolio'/>
-//     <DivLink name={name.mixin[0]} path='/portfolio'/>
-//   </LinkContainer>
-//   <DivLink name={name.lab[0]} path='/lab'/>
-// </LinkContainer>
-
-// <Flexbox flexDirection="row" flexWrap="wrap" minHeight="100%" width="100%">
-//   <FlexItem style={mediaQueries} flex="1" width="50%">
-//     <DivLink name={data.blog.name} path={data.blog.path} />
-//   </FlexItem>
-//
-//   <FlexItem style={mediaQueries} flex="1" width="50%">
-//     <DivLink name={data.blog.name} path={data.blog.path} />
-//   </FlexItem>
-//
-//   <FlexItem style={mediaQueries} flex="1" width="50%">
-//     <Flexbox flexDirection="row" flexWrap="wrap" minHeight="100%" width="100%">
-//       <FlexItem style={mediaQueries} flex="1" width="50%">
-//         <DivLink name={data.blog.name} path={data.blog.path} />
-//       </FlexItem>
-//       <FlexItem style={mediaQueries} flex="1" width="50%">
-//         <DivLink name={data.blog.name} path={data.blog.path} />
-//       </FlexItem>
-//       <FlexItem style={mediaQueries} flex="1" width="50%">
-//         <DivLink name={data.blog.name} path={data.blog.path} />
-//       </FlexItem>
-//       <FlexItem style={mediaQueries} flex="1" width="50%">
-//         <DivLink name={data.blog.name} path={data.blog.path} />
-//       </FlexItem>
-//     </Flexbox>
-//   </FlexItem>
-//
-//   <FlexItem style={mediaQueries} flex="1" width="50%">
-//     <DivLink name={data.blog.name} path={data.blog.path} />
-//   </FlexItem>
-//
-// </Flexbox>
 
 
 class frontPage extends Component {

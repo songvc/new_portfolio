@@ -31,7 +31,7 @@ class LinkContainer extends Component {
 
     return (
 
-      <Flexbox style={data}>
+      <Flexbox {...data}>
         {children.map(child => {
           return (
             <FlexItem key={child.data.id} flex="1" width="50%">
