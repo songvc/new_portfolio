@@ -5,10 +5,7 @@ import { Flexbox, FlexItem } from 'flexbox-react';
 
 const tree = {
   "data": {
-    "flexDirection":"row",
-    "flexWrap":"wrap",
-    "minHeight":"100%",
-    "width":"100%"
+    "nested": false
   },
   "children": [
     {
@@ -33,9 +30,7 @@ const tree = {
     },
     {
       "data": {
-        "flexDirection":"row",
-        "flexWrap":"wrap",
-        "minHeight":"100%"
+        "nested": true
       },
       "children": [
         {
@@ -92,14 +87,6 @@ const tree = {
     }
   ]
 
-}
-
-const mediaQueries = {
-  "@media (maxWidth: 540px)":{
-    "flex": '1 100%',
-    "width": "100%",
-    "height": "25%"
-  }
 }
 
 

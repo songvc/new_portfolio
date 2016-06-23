@@ -1,49 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import Radium from 'radium';
-import FontAwesome from 'react-fontawesome';
-
-const styles = {
-  divStyle: {
-    "default": {
-      "position":"relative",
-      "weight": "100%",
-      "height": "100%",
-      "cursor": "pointer",
-      "justifyContent": "center",
-      "alignItems": "center",
-      "@media (max-Width: 540px)":{
-        "flex": '1 100%',
-        "height": "25%"
-      }
-    },
-  },
-  linkStyle: {
-    "default": {
-      "textDecoration": "none"
-    },
-    "isHovering": {
-      "display": "none"
-    },
-    "isNotHovering": {
-      "display": "block"
-    }
-  },
-  iconStyle: {
-    "default":{
-      "position":"absolute",
-      "display": "none"
-    },
-    "isHovering": {
-      "display": "inline-block"
-    },
-    "isNotHovering": {
-      "display": "none"
-    }
-  }
-}
-
-const RadiumFontAwesome = Radium(FontAwesome);
+import styles from '../css/link.css';
+import Icon from 'react-fontawesome';
 
 class divLink extends Component {
   constructor(props){
@@ -55,7 +13,7 @@ class divLink extends Component {
   }
 
   handleClick() {
-    browserHistory.push(this.props.path);
+    browserHistory.push(path);
   }
 
   handleMouseOver() {
@@ -67,25 +25,24 @@ class divLink extends Component {
   }
 
   render() {
+    console.log(this.props);
 
-    const linkHover = (this.state.isHovering) ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]
-    const iconHover = (this.state.isHovering) ? styles.iconStyle["isHovering"] : styles.iconStyle["isNotHovering"]
+    const { name, color, icon, path } = this.props.message;
+    const divStyle = { ...styles.divStyle.base, "backgroundColor": color }
+    const linkHover = Object.assign(styles.linkStyle.base, (this.state.isHovering) ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]);
+    const iconHover = Object.assign(styles.iconStyle.base, (this.state.isHovering) ? styles.iconStyle["isHovering"] : styles.iconStyle["isNotHovering"]);
 
     return (
       <div
-        style={[styles.divStyle.default]}
+        style={divStyle}
         onMouseOver={this.handleMouseOver.bind(this)}
         onMouseOut={this.handleMouseOut.bind(this)}
         onClick={this.handleClick.bind(this)}>
-        <strong style={[styles.linkStyle.default, linkHover]}>{this.props.name}</strong>
-        <RadiumFontAwesome
-          name='rocket'
-          size='2x'
-          style={[styles.iconStyle, iconHover]}
-        />
+        <strong style={linkHover}>name</strong>
+        <Icon name={icon} size='2x'style={iconHover}/>
       </div>
     );
   }
 }
 
-export default Radium(divLink);
+export default divLink;

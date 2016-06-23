@@ -1,26 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import DivLink from './link';
-import Radium from 'radium';
+import styles from '../css/flexbox.css';
 import { Flexbox, FlexItem } from 'flexbox-react';
-
-// const styles = {
-//   "default": {
-//     "display": "flex",
-//     "flexDirection": "row",
-//     "flexWrap": "wrap"
-//   },
-//   "non-nested": {
-//     "height": "100%"
-//   },
-//   "nested": {
-//     "flex": "1 50%",
-//     "height": "50%",
-//     "@media (max-Width: 540px)": {
-//       "flexDirection": "column",
-//       "height": "25%"
-//     }
-//   }
-// }
 
 class LinkContainer extends Component {
 
@@ -28,19 +9,17 @@ class LinkContainer extends Component {
 
     const {data} = this.props.children;
     const {children} = this.props.children;
+    const style = data.nested ? Object.assign(styles.base, styles.nested) : styles.base;
 
     return (
 
-      <Flexbox {...data}>
+      <Flexbox {...style} >
         {children.map(child => {
           return (
             <FlexItem key={child.data.id} flex="1" width="50%">
               {child.children.length > 0
               ? <LinkContainer children={child}/>
-              : <DivLink
-                  key={child.data.id}
-                  name={child.data.name}
-                  to={child.data.path} />}
+            : <DivLink message={child.data} />}
             </FlexItem>
           )
         })}
