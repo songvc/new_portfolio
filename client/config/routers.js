@@ -11,7 +11,7 @@ import Mixin from '../components/mixin';
 import Portfolio from '../components/portfolio';
 
 const rootStyle = {
-  "height": "100%"
+  "height": "inherit"
 }
 
 const route = (

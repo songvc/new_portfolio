@@ -88,11 +88,14 @@ const tree = {
 
 }
 
+const rootStyle = {
+  "height": "100%"
+}
 
 class frontPage extends Component {
   render () {
     return (
-      <div>
+      <div style={rootStyle}>
         <LinkContainer children={tree} />
         <CenterIcon />
       </div>

@@ -14,7 +14,8 @@ const styles = {
       "left": "50%",
       "transform": "translate3d(-50%,-50%,0)",
       "textDecoration": "none",
-      "fontSize": "1.5em",
+      "fontSize": "1.2em",
+      "textTransform":"uppercase",
       "letterSpacing": "0.1em"
     },
     "isHovering": {
@@ -29,7 +30,7 @@ const styles = {
       "position":"absolute",
       "top": "50%",
       "transform": "translate3d(-50%,-50%,0)",
-      "left":"-10%",
+      "left":"10%",
       "visibility": "hidden",
       "transition":"left 0.3s",
     },
@@ -39,7 +40,7 @@ const styles = {
     },
     "isNotHovering": {
       "visibility": "hidden",
-      "left":"-50%",
+      "left":"10%",
     }
   }
 }
