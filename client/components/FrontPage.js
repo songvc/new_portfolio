@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LinkContainer from './LinkContainer';
-import Radium from 'radium';
-import { Flexbox, FlexItem } from 'flexbox-react';
+import CenterIcon from './center-icon';
 
 const tree = {
   "data": {
@@ -13,8 +12,8 @@ const tree = {
         "id": "1",
         "name": "Blog",
         "path" : "/blog",
-        "color" : "red",
-        "icon" : ""
+        "color" : "#AAC39C",
+        "icon" : "feed"
       },
       "children": []
     },
@@ -23,8 +22,8 @@ const tree = {
         "id": "2",
         "name": "Portfolio",
         "path" : "/portfolio",
-        "color" : "blue",
-        "icon" : ""
+        "color" : "#5A86BF",
+        "icon" : "camera-retro"
       },
       "children": []
     },
@@ -38,8 +37,8 @@ const tree = {
             "id": "3",
             "name": "Twitter",
             "path" : "/twitter",
-            "color" : "yellow",
-            "icon" : ""
+            "color" : "#F2D194",
+            "icon" : "twitter"
           },
           "children": []
         },
@@ -48,8 +47,8 @@ const tree = {
             "id": "4",
             "name": "Github",
             "path" : "/github",
-            "color" : "green",
-            "icon" : ""
+            "color" : "#FFE9C0",
+            "icon" : "github"
           },
           "children": []
         },
@@ -58,8 +57,8 @@ const tree = {
             "id": "5",
             "name": "Codepen",
             "path" : "/portfolio",
-            "color" : "orange",
-            "icon" : ""
+            "color" : "#C9A25B",
+            "icon" : "codepen"
           },
           "children": []
         },
@@ -68,8 +67,8 @@ const tree = {
             "id": "6",
             "name": "Contact",
             "path" : "/contact",
-            "color" : "black",
-            "icon" : ""
+            "color" : "#9C752B",
+            "icon" : "envelope"
           },
           "children": []
         }
@@ -80,8 +79,8 @@ const tree = {
         "id": "7",
         "name": "Lab",
         "path" : "/lab",
-        "color" : "",
-        "icon" : ""
+        "color" : "#D95A4E",
+        "icon" : "archive"
       },
       "children": []
     }
@@ -93,7 +92,10 @@ const tree = {
 class frontPage extends Component {
   render () {
     return (
-      <LinkContainer children={tree} />
+      <div>
+        <LinkContainer children={tree} />
+        <CenterIcon />
+      </div>
     )
   }
 }

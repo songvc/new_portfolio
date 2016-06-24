@@ -1,51 +1,24 @@
-// const styles = {
-//   "default": {
-//     "display": "flex",
-//     "flexDirection": "row",
-//     "flexWrap": "wrap"
-//   },
-//   "non-nested": {
-//     "height": "100%"
-//   },
-//   "nested": {
-//     "flex": "1 50%",
-//     "height": "50%",
-//     "@media (max-Width: 540px)": {
-//       "flexDirection": "column",
-//       "height": "25%"
-//     }
-//   }
-// }
-//
-// const mediaQueries = {
-//   "@media (maxWidth: 540px)":{
-//     "flex": '1 100%',
-//     "width": "100%",
-//     "height": "25%"
-//   }
-// }
-
 const styles = {
   divStyle: {
     "base": {
       "position":"relative",
       "weight": "100%",
       "height": "100%",
-      "cursor": "pointer",
-      "justifyContent": "center",
-      "alignItems": "center",
-      "@media (max-Width: 540px)":{
-        "flex": '1 100%',
-        "height": "25%"
-      }
+      "cursor": "pointer"
     },
   },
   linkStyle: {
     "base": {
-      "textDecoration": "none"
+      "position": "absolute",
+      "top": "50%",
+      "left": "50%",
+      "transform": "translate3d(-50%,-50%,0)",
+      "textDecoration": "none",
+      "fontSize": "1.5em",
+      "letterSpacing": "0.1em"
     },
     "isHovering": {
-      "display": "none"
+      "visibility": "hidden"
     },
     "isNotHovering": {
       "display": "block"
@@ -54,13 +27,19 @@ const styles = {
   iconStyle: {
     "base":{
       "position":"absolute",
-      "display": "none"
+      "top": "50%",
+      "transform": "translate3d(-50%,-50%,0)",
+      "left":"-10%",
+      "visibility": "hidden",
+      "transition":"left 0.3s",
     },
     "isHovering": {
-      "display": "inline-block"
+      "visibility": "visible",
+      "left":"50%"
     },
     "isNotHovering": {
-      "display": "none"
+      "visibility": "hidden",
+      "left":"-50%",
     }
   }
 }

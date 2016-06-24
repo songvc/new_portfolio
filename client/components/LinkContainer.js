@@ -9,17 +9,18 @@ class LinkContainer extends Component {
 
     const {data} = this.props.children;
     const {children} = this.props.children;
-    const style = data.nested ? Object.assign(styles.base, styles.nested) : styles.base;
+    const style = data.nested ? { ...styles.base, ...styles.nested } : styles.base;
+    const mediaQueries = data.nested ? styles.mediaQueries : styles.mediaQueries;
 
     return (
 
-      <Flexbox {...style} >
+      <Flexbox {...style} style={mediaQueries}>
         {children.map(child => {
           return (
-            <FlexItem key={child.data.id} flex="1" width="50%">
+            <FlexItem key={child.data.id} {...styles.flexItem}>
               {child.children.length > 0
               ? <LinkContainer children={child}/>
-            : <DivLink message={child.data} />}
+              : <DivLink message={child.data} />}
             </FlexItem>
           )
         })}

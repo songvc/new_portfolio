@@ -6,22 +6,18 @@ const styles = {
     "height": "100%"
   },
   "nested": {
-    "flex": "1 50%",
-    "height": "50%",
+    "flex": "1 50%"
+  },
+  "flexItem": {
+    "flex": "1",
+    "width": "50%"
+  },
+  "mediaQueries": {
     "@media (maxWidth: 540px)": {
-      "flexDirection": "column",
-      "height": "25%"
+      "backgroundColor":"black",
+      "border": "1px solid black"
     }
   }
 }
-
-// "flexDirection":"row",
-// "flexWrap":"wrap",
-// "minHeight":"100%",
-// "width":"100%"
-
-// "flexDirection":"row",
-// "flexWrap":"wrap",
-// "minHeight":"100%"
 
 export default styles;

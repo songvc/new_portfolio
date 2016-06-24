@@ -13,7 +13,7 @@ class divLink extends Component {
   }
 
   handleClick() {
-    browserHistory.push(path);
+    browserHistory.push(this.props.message.path);
   }
 
   handleMouseOver() {
@@ -25,12 +25,10 @@ class divLink extends Component {
   }
 
   render() {
-    console.log(this.props);
-
-    const { name, color, icon, path } = this.props.message;
-    const divStyle = { ...styles.divStyle.base, "backgroundColor": color }
-    const linkHover = Object.assign(styles.linkStyle.base, (this.state.isHovering) ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]);
-    const iconHover = Object.assign(styles.iconStyle.base, (this.state.isHovering) ? styles.iconStyle["isHovering"] : styles.iconStyle["isNotHovering"]);
+    const { name, color, icon } = this.props.message;
+    const divStyle = { ...styles.divStyle.base, "backgroundColor": color };
+    const linkHover = Object.assign({}, styles.linkStyle.base, (this.state.isHovering) ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]);
+    const iconHover = Object.assign({}, styles.iconStyle.base, (this.state.isHovering) ? styles.iconStyle["isHovering"] : styles.iconStyle["isNotHovering"]);
 
     return (
       <div
@@ -38,8 +36,8 @@ class divLink extends Component {
         onMouseOver={this.handleMouseOver.bind(this)}
         onMouseOut={this.handleMouseOut.bind(this)}
         onClick={this.handleClick.bind(this)}>
-        <strong style={linkHover}>name</strong>
-        <Icon name={icon} size='2x'style={iconHover}/>
+        <strong style={linkHover}>{name}</strong>
+        <Icon name={icon} size='3x'style={iconHover}/>
       </div>
     );
   }
