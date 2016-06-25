@@ -6,15 +6,15 @@ const style = {
   "top": "50%",
   "left": "50%",
   "height": "60px",
-  "lineHeight":"55px",
+  "lineHeight":"60px",
   "width": "60px",
   "color": "#3a4145",
   "margin": "-30px",
-  "borderRadius": "30px",
+  "borderRadius": "28px",
   "backgroundColor": "white",
-  "fontFamily": "arial",
+  "fontFamily": "Futura",
   "fontWeight": "800",
-  "fontSize": "56px",
+  "fontSize": "36px",
   "textAlign": "center",
   "transition": "transform 2s"
 }
@@ -47,7 +47,7 @@ class CenterIcon extends Component {
               transform: `rotate(${current.x}deg)`
             }
             return (
-              <div style={innerStyle}>v</div>
+              <div style={innerStyle}>VS</div>
             )
           }}
         </Motion>
