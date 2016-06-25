@@ -18,6 +18,8 @@
     "react-flexbox-grid": "^0.9.6",
     "react-fontawesome": "^1.1.0",
     "react-icons": "^2.1.0",
-    "react-router": "^2.4.1"
+    "react-motion": "^0.4.4",
+    "react-router": "^2.4.1",
+    "velocity-react": "^1.1.5"
   }
 }

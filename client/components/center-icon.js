@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Spring } from 'react-motion';
 
 const style = {
   "position" : "absolute",
   "top": "50%",
   "left": "50%",
   "height": "60px",
-  "lineHeight":"50px",
+  "lineHeight":"55px",
   "width": "60px",
   "color": "#3a4145",
   "margin": "-30px",
@@ -18,12 +19,13 @@ const style = {
   "transition": "transform 2s"
 }
 
-class centerIcon extends Component {
+class CenterIcon extends Component {
 
-  consturctor() {
+  constructor(props) {
+    super(props);
     this.state = {
       isHovering: false
-    }
+    };
   }
 
   handleMouseOver() {
@@ -43,4 +45,4 @@ class centerIcon extends Component {
   }
 }
 
-export default centerIcon;
+export default CenterIcon;

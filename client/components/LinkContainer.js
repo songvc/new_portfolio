@@ -18,8 +18,7 @@ class LinkContainer extends Component {
         {children.map(child => {
           return (
             <FlexItem key={child.data.id} {...styles.flexItem}>
-              {child.children.length > 0
-              ? <LinkContainer children={child}/>
+              {(child.children.length > 0) ? <LinkContainer children={child}/>
               : <DivLink message={child.data} />}
             </FlexItem>
           )
