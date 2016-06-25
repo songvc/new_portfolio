@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Spring } from 'react-motion';
+import { spring, Motion } from 'react-motion';
 
 const style = {
   "position" : "absolute",
@@ -40,7 +40,18 @@ class CenterIcon extends Component {
     return (
       <div style={style}
         onMouseOver={this.handleMouseOver.bind(this)}
-        onMouseOut={this.handleMouseOut.bind(this)}>v</div>
+        onMouseOut={this.handleMouseOut.bind(this)}>
+        <Motion defaultStyle={{x: 0}} style={{x: spring((this.state.isHovering)? 360: 0)}}>
+          {current => {
+            let innerStyle = {
+              transform: `rotate(${current.x}deg)`
+            }
+            return (
+              <div style={innerStyle}>v</div>
+            )
+          }}
+        </Motion>
+      </div>
     )
   }
 }

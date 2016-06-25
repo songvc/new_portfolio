@@ -37,7 +37,7 @@ class divLink extends Component {
         onMouseOut={this.handleMouseOut.bind(this)}
         onClick={this.handleClick.bind(this)}>
         <strong style={linkHover}>{name}</strong>
-        <Icon name={icon} size='3x'style={iconHover}/>
+        <Icon name={icon} size='3x' style={iconHover}/>
       </div>
     );
   }
