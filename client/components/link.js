@@ -27,8 +27,8 @@ class divLink extends Component {
   render() {
     const { name, color, icon } = this.props.message;
     const divStyle = { ...styles.divStyle.base, "backgroundColor": color };
-    const linkHover = Object.assign({}, styles.linkStyle.base, (this.state.isHovering) ? styles.linkStyle["isHovering"] : styles.linkStyle["isNotHovering"]);
-    const iconHover = Object.assign({}, styles.iconStyle.base, (this.state.isHovering) ? styles.iconStyle["isHovering"] : styles.iconStyle["isNotHovering"]);
+    const linkHover = Object.assign({}, styles.linkStyle.base, this.state.isHovering && styles.linkStyle.isHovering);
+    const iconHover = Object.assign({}, styles.iconStyle.base, this.state.isHovering && styles.iconStyle.isHovering);
 
     return (
       <div
