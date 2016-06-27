@@ -6,7 +6,8 @@ const style = {
     "display": "flex",
     "flexDirection": "row",
     "width": "100%",
-    "height": "10%"
+    "height": "200px",
+    "backgroundColor": "red"
   },
   "flexItem": {
     "flex": "1",
@@ -25,7 +26,7 @@ class Header extends Component {
     return (
       <Flexbox {...style.base}>
         <FlexItem {...style.flexItem}>
-          
+
         </FlexItem>
         <FlexItem {...style.flexItem}>
 

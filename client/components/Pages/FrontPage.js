@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LinkContainer from '../components/LinkContainer';
-import CenterIcon from '../components/CenterIcon';
+import LinkContainer from '../LinkContainer';
+import CenterIcon from '../CenterIcon';
 
 const tree = {
   "data": {
