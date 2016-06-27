@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Header from './header';
 
+const rootStyle = {
+  "height": "100%"
+}
+
 class Blog extends Component {
   render() {
     return (
-      <div>
-        <Header></Header>
+      <div style={rootStyle}>
+        <Header />
         <div>blog</div>
       </div>
     )

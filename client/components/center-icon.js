@@ -15,8 +15,7 @@ const style = {
   "fontFamily": "Futura",
   "fontWeight": "800",
   "fontSize": "36px",
-  "textAlign": "center",
-  "transition": "transform 2s"
+  "textAlign": "center"
 }
 
 class CenterIcon extends Component {

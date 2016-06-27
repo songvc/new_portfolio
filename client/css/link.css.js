@@ -16,13 +16,11 @@ const styles = {
       "textDecoration": "none",
       "fontSize": "1.2em",
       "textTransform":"uppercase",
-      "letterSpacing": "0.1em"
+      "letterSpacing": "0.1em",
+      "display": "block"
     },
     "isHovering": {
       "visibility": "hidden"
-    },
-    "isNotHovering": {
-      "display": "block"
     }
   },
   iconStyle: {
@@ -37,10 +35,6 @@ const styles = {
     "isHovering": {
       "visibility": "visible",
       "left":"50%"
-    },
-    "isNotHovering": {
-      "visibility": "hidden",
-      "left":"10%",
     }
   }
 }
