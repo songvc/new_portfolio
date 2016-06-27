@@ -27,19 +27,15 @@ class CenterIcon extends Component {
     };
   }
 
-  handleMouseOver() {
-    this.setState({ isHovering: true });
-  }
-
-  handleMouseOut() {
-    this.setState({ isHovering: false });
+  handleHover() {
+    this.setState({ isHovering: !this.state.Hovering });
   }
 
   render() {
     return (
       <div style={style}
-        onMouseOver={this.handleMouseOver.bind(this)}
-        onMouseOut={this.handleMouseOut.bind(this)}>
+        onMouseOver={this.handleHover.bind(this)}
+        onMouseOut={this.handleHover.bind(this)}>
         <Motion defaultStyle={{x: 0}} style={{x: spring((this.state.isHovering)? 360: 0)}}>
           {current => {
             let innerStyle = {

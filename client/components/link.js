@@ -7,8 +7,7 @@ class divLink extends Component {
   constructor(props){
     super(props);
     this.state = {
-      isHovering: false,
-      isActive: false
+      isHovering: false
     }
   }
 
@@ -16,12 +15,8 @@ class divLink extends Component {
     browserHistory.push(this.props.message.path);
   }
 
-  handleMouseOver() {
-    this.setState({ isHovering: true });
-  }
-
-  handleMouseOut() {
-    this.setState({ isHovering: false });
+  handleHover() {
+    this.setState({ isHovering: !this.state.isHovering })
   }
 
   render() {
@@ -33,8 +28,8 @@ class divLink extends Component {
     return (
       <div
         style={divStyle}
-        onMouseOver={this.handleMouseOver.bind(this)}
-        onMouseOut={this.handleMouseOut.bind(this)}
+        onMouseOver={this.handleHover.bind(this)}
+        onMouseOut={this.handleHover.bind(this)}
         onClick={this.handleClick.bind(this)}>
         <strong style={linkHover}>{name}</strong>
         <Icon name={icon} size='3x' style={iconHover}/>
