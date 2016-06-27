@@ -28,7 +28,7 @@ class CenterIcon extends Component {
   }
 
   handleHover() {
-    this.setState({ isHovering: !this.state.Hovering });
+    this.setState({ isHovering: !this.state.isHovering });
   }
 
   render() {

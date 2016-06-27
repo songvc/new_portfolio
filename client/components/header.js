@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <Flexbox {...style.base}>
         <FlexItem {...style.flexItem}>
-
+          
         </FlexItem>
         <FlexItem {...style.flexItem}>
 
