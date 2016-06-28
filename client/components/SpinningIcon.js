@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { spring, Motion } from 'react-motion';
 
-const style = {
+const layout = {
   "position" : "absolute",
-  "top": "50%",
-  "left": "50%",
   "height": "60px",
-  "lineHeight":"60px",
   "width": "60px",
-  "color": "#3a4145",
+  "lineHeight":"60px",
   "margin": "-30px",
   "borderRadius": "28px",
+  "textAlign": "center"
+}
+
+const style = {
+  "color": "#3a4145",
   "backgroundColor": "white",
   "fontFamily": "Futura",
   "fontWeight": "800",
-  "fontSize": "36px",
-  "textAlign": "center"
+  "fontSize": "36px"
 }
 
 class CenterIcon extends Component {
@@ -32,8 +33,12 @@ class CenterIcon extends Component {
   }
 
   render() {
+
+    const { top, left } = this.props.position;
+    let combinedLayout = { ...layout, "top": top, "left": left };
+
     return (
-      <div style={style}
+      <div style={Object.assign(combinedLayout, style)}
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}>
         <Motion defaultStyle={{x: 0}} style={{x: spring((this.state.isHovering)? 360: 0)}}>

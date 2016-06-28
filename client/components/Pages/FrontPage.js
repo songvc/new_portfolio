@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LinkContainer from '../LinkContainer';
-import CenterIcon from '../CenterIcon';
+import SpinningIcon from '../SpinningIcon';
 
 const tree = {
   "data": {
@@ -97,7 +97,7 @@ class frontPage extends Component {
     return (
       <div style={rootStyle}>
         <LinkContainer children={tree} />
-        <CenterIcon />
+        <SpinningIcon position={{"top":"50%", "left":"50%"}} />
       </div>
     )
   }

@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router';
 import styles from '../css/link.css';
 import Icon from 'react-fontawesome';
 
-class divLink extends Component {
+class SlideLink extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -38,4 +38,4 @@ class divLink extends Component {
   }
 }
 
-export default divLink;
+export default SlideLink;

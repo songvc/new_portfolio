@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
+import SlideLink from './SlideLink';
 import { Flexbox, FlexItem } from 'flexbox-react';
 
-const style = {
-  "base": {
+const layout = {
+  "flexBox": {
     "display": "flex",
     "flexDirection": "column",
     "width": "100%",
-    "height": "100%",
-    "backgroundColor": "red"
+    "height": "100vh",
   },
   "flexItem": {
     "flex": "1",
-    "width": "25%"
+    "height": "25%"
   }
 }
 
@@ -20,8 +20,8 @@ const menus = [
     "id": "1",
     "name": "Home",
     "path" : "/",
-    "color" : "#AAC39C",
-    "icon" : "feed"
+    "color" : "#F2D194",
+    "icon" : "bars"
   },
   {
     "id": "2",
@@ -44,19 +44,17 @@ const menus = [
     "color" : "#D95A4E",
     "icon" : "archive"
   }
-  
 ]
-
 
 class VerticalMenu extends Component {
   render() {
     return (
-      <Flexbox {...style.base}>
+      <Flexbox {...layout.flexBox}>
         {
-          menus.map((map) => {
+          menus.map((menu) => {
             return (
-              <FlexItem {...style.flexItem}>
-                <DivLink message={map}/>
+              <FlexItem key={menu.id} {...layout.flexItem}>
+                <SlideLink message={menu}/>
               </FlexItem>
             )
           })

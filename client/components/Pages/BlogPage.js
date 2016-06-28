@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
 import Header from '../Header';
-import VerticalMenu from '../VerticalMenu'
+import VerticalMenu from '../VerticalMenu';
 
 class Blog extends Component {
   componentWillMount() {

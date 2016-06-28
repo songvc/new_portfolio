@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import DivLink from './link';
+import SlideLink from './SlideLink';
 import styles from '../css/flexbox.css';
 import { Flexbox, FlexItem } from 'flexbox-react';
 
@@ -19,7 +19,7 @@ class LinkContainer extends Component {
           return (
             <FlexItem key={child.data.id} {...styles.flexItem}>
               {(child.children.length > 0) ? <LinkContainer children={child}/>
-              : <DivLink message={child.data} />}
+              : <SlideLink message={child.data} />}
             </FlexItem>
           )
         })}
