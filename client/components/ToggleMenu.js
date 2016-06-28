@@ -49,17 +49,17 @@ class ToggleMenu extends Component {
           }}
         </Motion>
         <span>VS</span>
-        <Motion defaultStyle={{x: 0}} style={{x: spring((this.state.isHovering)? 360: 0, {stiffness: 170, damping: 26}) }}>
-          {current => {
-            let cubeStyle2 = {
-              transform: `rotate(${current.x}deg)`
-            }
-
-            return (
-              <span style={cubeStyle2}>?</span>
-            )
-          }}
-        </Motion>
+        // <Motion defaultStyle={{x: 0}} style={{x: spring((this.state.isHovering)? 360: 0, {stiffness: 170, damping: 26}) }}>
+        //   {current => {
+        //     let cubeStyle2 = {
+        //       transform: `rotate(${current.x}deg)`
+        //     }
+        //
+        //     return (
+        //       <span style={cubeStyle2}>?</span>
+        //     )
+        //   }}
+        // </Motion>
       </div>
     )
   }
