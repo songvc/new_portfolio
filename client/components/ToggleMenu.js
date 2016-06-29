@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { spring, Motion } from 'react-motion';
 
 const layout = {
-  "height": "100%",
-  "width": "100%",
-  "lineHeight":"125%",
-  "textAlign": "center"
+  "position": "fixed",
+  "top": "0",
+  "left": "0",
+  "height": "60px",
+  "width": "60px",
+  "textAlign":"center",
 }
 
 const style = {
@@ -13,10 +15,13 @@ const style = {
   "backgroundColor": "white",
   "fontFamily": "Futura",
   "fontWeight": "800",
-  "fontSize": "36px"
+  "fontSize": "36px",
+  "lineHeight": "60px"
 }
 
-
+const textStyle= {
+  "lneHeight": "30px"
+}
 
 class ToggleMenu extends Component {
 
@@ -36,40 +41,52 @@ class ToggleMenu extends Component {
       <div style={Object.assign(layout, style)}
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}>
-        <Motion defaultStyle={{x: 0}} style={{x: spring((this.state.isHovering)? 360: 0, {stiffness: 170, damping: 26}) }}>
+        <Motion
+          defaultStyle={{x: 0, y:0}}
+          style={{x: spring(this.state.isHovering && 360),
+          y: spring(this.state.isHovering && 45) }}>
+
           {current => {
             let cubeStyle1 = {
-              transform: `rotate(${current.x}deg)`,
-              transform: `left`
+              position: 'absolute',
+              top: 5,
+              left: 5 + current.y,
+              height: "5px",
+              width: "5px",
+              backgroundColor:"blue",
+              transform: `rotate(${current.x}deg)`
             }
 
             return (
-              <span style={cubeStyle1}>?</span>
+              <div style={cubeStyle1}></div>
             )
           }}
         </Motion>
-        <span>VS</span>
-        // <Motion defaultStyle={{x: 0}} style={{x: spring((this.state.isHovering)? 360: 0, {stiffness: 170, damping: 26}) }}>
-        //   {current => {
-        //     let cubeStyle2 = {
-        //       transform: `rotate(${current.x}deg)`
-        //     }
-        //
-        //     return (
-        //       <span style={cubeStyle2}>?</span>
-        //     )
-        //   }}
-        // </Motion>
+        <div>VS</div>
+        <Motion
+          defaultStyle={{x: 0, y:0 }}
+          style={{x: spring(this.state.isHovering && 360),
+          y: spring(this.state.isHovering && 45) }}>
+
+          {current => {
+            let cubeStyle2 = {
+              position: 'absolute',
+              bottom: 5,
+              right: 5 + current.y,
+              height: "5px",
+              width: "5px",
+              backgroundColor:"blue",
+              transform: `rotate(${current.x}deg)`
+            }
+
+            return (
+              <div style={cubeStyle2}></div>
+            )
+          }}
+        </Motion>
       </div>
     )
   }
 }
-// <span style={cubeStyle2}>?</span>
 
-// let cubeStyle2 = {
-//   position: "absolute",
-//   bottom: "0",
-//   right: "0",
-//   transform: `rotate(${current.x}deg)`
-// }
 export default ToggleMenu;

@@ -3,6 +3,10 @@ import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
 import Header from '../Header';
 import VerticalMenu from '../VerticalMenu';
 
+const style = {
+  "marginTop": "120px"
+}
+
 class Blog extends Component {
   componentWillMount() {
     // sets the initial state
@@ -21,7 +25,47 @@ class Blog extends Component {
       <OffCanvas width={300} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"}>
         <OffCanvasBody>
           <Header />
-          <p><a href="#" onClick={this.handleClick.bind(this)}>Click here</a> to toggle the menu.</p>
+          <p style={style}><a href="#" onClick={this.handleClick.bind(this)}>Click here</a> to toggle the menu.</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
+          <p>sdf</p>
         </OffCanvasBody>
         <OffCanvasMenu>
           <VerticalMenu />

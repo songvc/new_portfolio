@@ -41,7 +41,7 @@ class CenterIcon extends Component {
       <div style={Object.assign(combinedLayout, style)}
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}>
-        <Motion defaultStyle={{x: 0}} style={{x: spring((this.state.isHovering)? 360: 0)}}>
+        <Motion defaultStyle={{x: 0}} style={{x: spring(this.state.isHovering && 360)}}>
           {current => {
             let innerStyle = {
               transform: `rotate(${current.x}deg)`

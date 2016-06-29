@@ -3,8 +3,8 @@ import ToggleMenu from './ToggleMenu';
 import MenuLink from './MenuLink';
 import { Flexbox, FlexItem } from 'flexbox-react';
 
-const layout = {
-  "flexBox": {
+const flexbox = {
+  "container": {
     "display": "flex",
     "flexDirection": "row",
     "width": "100%",
@@ -15,32 +15,33 @@ const layout = {
   },
   "flexCenter": {
     "flex": "1",
-
   },
   "flexMenus": {
     "flex": "1"
   }
 }
 
+const layout = {
+}
+
 const style = {
-  "border": "black solid 1px",
   "backgroundColor": "#3a4145"
 }
 
 class Header extends Component {
   render() {
     return (
-      <Flexbox style={style} {...layout.flexBox}>
-        <FlexItem style={style} {...layout.flexItem}>
+      <Flexbox style={Object.assign(layout, style)} {...flexbox.container}>
+        <FlexItem  {...flexbox.flexItem}>
           <ToggleMenu />
         </FlexItem>
-        <FlexItem style={style} {...layout.flexItem}>
+        <FlexItem  {...flexbox.flexItem}>
 
         </FlexItem>
-        <FlexItem style={style} {...layout.flexItem}>
+        <FlexItem  {...flexbox.flexItem}>
 
         </FlexItem>
-        <FlexItem style={style} {...layout.flexItem}>
+        <FlexItem  {...flexbox.flexItem}>
 
         </FlexItem>
       </Flexbox>

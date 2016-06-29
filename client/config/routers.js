@@ -15,14 +15,12 @@ const rootStyle = {
 }
 
 const route = (
-  <StyleRoot style={rootStyle}>
-    <Router history={browserHistory}>
-      <Route path="/" component={FrontPage} />
-      <Route path="/blog" component={BlogPage} />
-      <Route path="/lab" component={LabPage} />
-      <Route path="/portfolio" component={PortfolioPage} />
-    </Router>
-  </StyleRoot>
+  <Router history={browserHistory}>
+    <Route path="/" component={FrontPage} />
+    <Route path="/blog" component={BlogPage} />
+    <Route path="/lab" component={LabPage} />
+    <Route path="/portfolio" component={PortfolioPage} />
+  </Router>
 );
 
 export default route;
