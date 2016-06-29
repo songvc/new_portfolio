@@ -42,19 +42,20 @@ class ToggleMenu extends Component {
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}>
         <Motion
-          defaultStyle={{x: 0, y:0}}
-          style={{x: spring(this.state.isHovering && 360),
-          y: spring(this.state.isHovering && 45) }}>
+          defaultStyle={{degree: 0, x:0, scale:0}}
+          style={{degree: spring(this.state.isHovering && 720),
+          x: spring(this.state.isHovering && 45)
+         }}>
 
           {current => {
             let cubeStyle1 = {
               position: 'absolute',
               top: 5,
-              left: 5 + current.y,
+              left: 5 + current.x,
               height: "5px",
               width: "5px",
               backgroundColor:"blue",
-              transform: `rotate(${current.x}deg)`
+              transform: `rotate(${current.degree}deg)`
             }
 
             return (
@@ -64,19 +65,20 @@ class ToggleMenu extends Component {
         </Motion>
         <div>VS</div>
         <Motion
-          defaultStyle={{x: 0, y:0 }}
-          style={{x: spring(this.state.isHovering && 360),
-          y: spring(this.state.isHovering && 45) }}>
+          defaultStyle={{degree: 0, x:0, scale:0 }}
+          style={{degree: spring(this.state.isHovering && 720),
+          x: spring(this.state.isHovering && 45)
+         }}>
 
           {current => {
             let cubeStyle2 = {
               position: 'absolute',
               bottom: 5,
-              right: 5 + current.y,
+              right: 5 + current.x,
               height: "5px",
               width: "5px",
               backgroundColor:"blue",
-              transform: `rotate(${current.x}deg)`
+              transform: `rotate(${current.degree}deg)`
             }
 
             return (

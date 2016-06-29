@@ -24,10 +24,6 @@ class MenuLink extends Component {
     }
   }
 
-  getStyle() {
-
-  }
-
   handleClick() {
     browserHistory.push(this.props.message.path);
   }
@@ -45,7 +41,7 @@ class MenuLink extends Component {
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}
         onClick={this.handleClick.bind(this)}>
-        // <p style={linkHover}>{this.props.children}</p>
+        <p style={linkHover}>{this.props.children}</p>
       </div>
     );
   }

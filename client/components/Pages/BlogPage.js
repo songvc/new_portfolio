@@ -15,7 +15,7 @@ class Blog extends Component {
     })
   }
 
-  handleClick() {
+  toggleMenu() {
     // toggles the menu opened state
     this.setState({ isMenuOpened: !this.state.isMenuOpened });
   }
@@ -24,7 +24,7 @@ class Blog extends Component {
     return (
       <OffCanvas width={300} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"}>
         <OffCanvasBody>
-          <Header />
+          <Header toggleMenu={this.toggleMenu}/>
           <p style={style}><a href="#" onClick={this.handleClick.bind(this)}>Click here</a> to toggle the menu.</p>
           <p>sdf</p>
           <p>sdf</p>
