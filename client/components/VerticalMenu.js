@@ -3,15 +3,15 @@ import SlideLink from './SlideLink';
 import { Flexbox, FlexItem } from 'flexbox-react';
 
 const layout = {
-  "flexBox": {
-    "display": "flex",
-    "flexDirection": "column",
-    "width": "100%",
-    "height": "100vh",
+  flexBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100vh',
   },
-  "flexItem": {
-    "flex": "1",
-    "height": "25%"
+  flexItem: {
+    flex: '1',
+    height: '25%'
   }
 }
 

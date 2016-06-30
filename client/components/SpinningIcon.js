@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { spring, Motion } from 'react-motion';
 
 const layout = {
-  "position" : "absolute",
-  "height": "60px",
-  "width": "60px",
-  "lineHeight":"60px",
-  "margin": "-30px",
-  "borderRadius": "28px",
-  "textAlign": "center"
+  position : 'absolute',
+  height: '60px',
+  width: '60px',
+  lineHeight: '60p',
+  margin:  '30px',
+  borderRadius: '28px',
+  textAlign: 'center'
 }
 
 const style = {
-  "color": "#3a4145",
-  "backgroundColor": "white",
-  "fontFamily": "Futura",
-  "fontWeight": "800",
-  "fontSize": "36px"
+  color: '#3a4145',
+  backgroundColor: 'white',
+  fontFamily: 'Futura',
+  fontWeight: '800',
+  fontSize: '36px'
 }
 
 class CenterIcon extends Component {

@@ -2,26 +2,26 @@ import React, { Component } from 'react';
 import { spring, Motion } from 'react-motion';
 
 const layout = {
-  "position": "fixed",
-  "top": "0",
-  "left": "0",
-  "height": "60px",
-  "width": "60px",
-  "textAlign":"center",
+  position: 'fixed',
+  top: '0',
+  left: '0',
+  height: '60px',
+  width: '60px',
+  textAlign:'center',
 }
 
 const style = {
-  "color": "#3a4145",
-  "backgroundColor": "white",
-  "fontFamily": "Futura",
-  "fontWeight": "800",
-  "fontSize": "36px",
-  "lineHeight": "60px",
-  "cursor": "pointer"
+  color: '#3a4145',
+  backgroundColor: 'white',
+  fontFamily: 'Futura',
+  fontWeight: '800',
+  fontSize: '36px',
+  lineHeight: '60px',
+  cursor: 'pointer'
 }
 
 const textStyle= {
-  "lneHeight": "30px"
+  lineHeight: '30px'
 }
 
 class ToggleMenu extends Component {

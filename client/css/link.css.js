@@ -1,40 +1,40 @@
 const styles = {
   divStyle: {
-    "base": {
-      "position":"relative",
-      "weight": "100%",
-      "height": "100%",
-      "cursor": "pointer"
+    base: {
+      position: 'relative',
+      weight:  '100%',
+      height:  '100%',
+      cursor:  'pointer'
     },
   },
   linkStyle: {
-    "base": {
-      "position": "absolute",
-      "top": "50%",
-      "left": "50%",
-      "transform": "translate3d(-50%,-50%,0)",
-      "textDecoration": "none",
-      "fontSize": "1.2em",
-      "textTransform":"uppercase",
-      "letterSpacing": "0.1em",
-      "display": "block"
+    base: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate3d(-50%,-50%,0)',
+      textDecoration: 'none',
+      fontSize: '1.2em',
+      textTransform:'uppercase',
+      letterSpacing: '0.1em',
+      display: 'block'
     },
-    "isHovering": {
-      "visibility": "hidden"
+    isHovering: {
+      visibility: 'hidden'
     }
   },
   iconStyle: {
-    "base":{
-      "position":"absolute",
-      "top": "50%",
-      "transform": "translate3d(-50%,-50%,0)",
-      "left":"10%",
-      "visibility": "hidden",
-      "transition":"left 0.3s",
+    base:{
+      position:'absolute',
+      top: '50%',
+      transform: 'translate3d(-50%,-50%,0)',
+      left:'10%',
+      visibility: 'hidden',
+      transition:'left 0.3s',
     },
-    "isHovering": {
-      "visibility": "visible",
-      "left":"50%"
+    isHovering: {
+      visibility: 'visible',
+      left: '50%'
     }
   }
 }

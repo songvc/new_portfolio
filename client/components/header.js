@@ -4,20 +4,20 @@ import MenuLink from './MenuLink';
 import { Flexbox, FlexItem } from 'flexbox-react';
 
 const flexbox = {
-  "container": {
-    "display": "flex",
-    "flexDirection": "row",
-    "width": "100%",
-    "height": "60px"
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100',
+    height: '60px'
   },
-  "flexIcon": {
-    "flex": "1"
+  flexIcon: {
+    flex: '1'
   },
-  "flexCenter": {
-    "flex": "1",
+  flexCenter: {
+    flex: '1',
   },
-  "flexMenus": {
-    "flex": "1"
+  flexMenus: {
+    flex: '1'
   }
 }
 

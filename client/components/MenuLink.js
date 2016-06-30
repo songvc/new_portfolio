@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
 const layout = {
-  "height": "100%",
-  "weight": "100%",
-  "textAlign": "center"
+  height: '100%',
+  weight: '100%',
+  textAlign: 'center'
 }
 
-// let style = {
-//   "base": {
-//     "backgroundColor": "Red"
-//   },
-//   "hover": {
-//     "backgroundColor": "Red"
-//   }
-// }
+const style = {
+  base: {
+    backgroundColor: 'Red'
+  },
+  hover: {
+    backgroundColor: 'Red'
+  }
+}
 
 class MenuLink extends Component {
   constructor(props){
