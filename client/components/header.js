@@ -22,6 +22,7 @@ const flexbox = {
 }
 
 const layout = {
+
 }
 
 const style = {
@@ -32,7 +33,7 @@ class Header extends Component {
   render() {
     return (
       <Flexbox style={Object.assign(layout, style)} {...flexbox.container}>
-        <FlexItem onClick={this.props.toggleMenu()} {...flexbox.flexItem}>
+        <FlexItem onClick={this.props.toggleMenu} {...flexbox.flexItem}>
           <ToggleMenu />
         </FlexItem>
         <FlexItem  {...flexbox.flexItem}>

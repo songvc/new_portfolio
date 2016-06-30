@@ -4,11 +4,10 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import normalize from 'normalize.css';
 import { StyleRoot } from 'radium';
 
-import FrontPage from '../components/Pages/FrontPage';
-import BlogPage from '../components/Pages/BlogPage';
-import LabPage from '../components/Pages/LabPage';
-import MixinPage from '../components/Pages/MixinPage';
-import PortfolioPage from '../components/Pages/PortfolioPage';
+import FrontPage from '../components/MainPages/FrontPage';
+import BlogPage from '../components/MainPages/BlogPage';
+import LabPage from '../components/MainPages/LabPage';
+import PortfolioPage from '../components/MainPages/PortfolioPage';
 
 const rootStyle = {
   "height": "inherit"

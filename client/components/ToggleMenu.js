@@ -16,7 +16,8 @@ const style = {
   "fontFamily": "Futura",
   "fontWeight": "800",
   "fontSize": "36px",
-  "lineHeight": "60px"
+  "lineHeight": "60px",
+  "cursor": "pointer"
 }
 
 const textStyle= {
@@ -52,9 +53,9 @@ class ToggleMenu extends Component {
               position: 'absolute',
               top: 5,
               left: 5 + current.x,
-              height: "5px",
-              width: "5px",
-              backgroundColor:"blue",
+              height: '5px',
+              width: '5px',
+              backgroundColor:"#3ec8ac",
               transform: `rotate(${current.degree}deg)`
             }
 
@@ -75,9 +76,9 @@ class ToggleMenu extends Component {
               position: 'absolute',
               bottom: 5,
               right: 5 + current.x,
-              height: "5px",
-              width: "5px",
-              backgroundColor:"blue",
+              height: '5px',
+              width: '5px',
+              backgroundColor:"#3ec8ac",
               transform: `rotate(${current.degree}deg)`
             }
 
