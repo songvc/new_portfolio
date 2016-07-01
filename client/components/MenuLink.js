@@ -22,6 +22,7 @@ const style = {
 
 const textStyle ={
   color: 'white',
+  textTransform: 'uppercase',
   margin: '0 15px'
 }
 

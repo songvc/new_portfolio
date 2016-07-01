@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
-import Header from '../Header';
-import VerticalMenu from '../VerticalMenu';
-
-const style = {
-  "marginTop": "120px"
-}
+import Layout from '../Layout';
 
 class Blog extends Component {
   componentWillMount() {
@@ -22,16 +16,9 @@ class Blog extends Component {
 
   render() {
     return (
-      <OffCanvas width={300} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={"left"}>
-        <OffCanvasBody>
-          <Header toggleMenu={this.toggleMenu.bind(this)}/>
-          <p>sdf</p>
-
-        </OffCanvasBody>
-        <OffCanvasMenu>
-          <VerticalMenu />
-        </OffCanvasMenu>
-      </OffCanvas>
+      <Layout page='blog'>
+        <div>Blog</div>
+      </Layout>
     );
   }
 }

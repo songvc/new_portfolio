@@ -29,26 +29,27 @@ const style = {
 }
 
 class Header extends Component {
+
+  constructor(props){
+    super(props);
+  }
+
   render() {
+    const {leftMenu, rightMenu} = this.props;
+
     return (
-
       <Flexbox style={style} {...dimension.flexBox}>
-
-        <FlexItem onClick={this.props.toggleMenu} {...dimension.flexItem.icon}>
+        <FlexItem onClick={this.props.toggleAction} {...dimension.flexItem.icon}>
           <ToggleMenu />
         </FlexItem>
-
         <FlexItem  {...dimension.flexItem.center}>
         </FlexItem>
-
         <FlexItem  {...dimension.flexItem.menu}>
-          <MenuLink message={{path:'/portfolio'}}>PORTFOLIO</MenuLink>
+          <MenuLink message={{path:`/${leftMenu}`}}>{leftMenu}</MenuLink>
         </FlexItem>
-
         <FlexItem  {...dimension.flexItem.menu}>
-          <MenuLink message={{path:'/lab'}}>LAB</MenuLink>
+          <MenuLink message={{path:`/${rightMenu}`}}>{rightMenu}</MenuLink>
         </FlexItem>
-
       </Flexbox>
     )
   }
