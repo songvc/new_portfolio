@@ -19,7 +19,7 @@ class LinkContainer extends Component {
           return (
             <FlexItem key={child.data.id} {...styles.flexItem}>
               {(child.children.length > 0) ? <LinkContainer children={child}/>
-              : <SlideLink message={child.data} />}
+              : <SlideLink key={child.data.id} message={child.data} />}
             </FlexItem>
           )
         })}

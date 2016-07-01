@@ -7,14 +7,14 @@ const dimension = {
     height: '100%',
     weight: '100%',
     cursor: 'pointer',
-    backgroundColor: '#17819c',
     overflow: 'hidden',
-    fontColor: 'Roboto'
+    fontFamily: 'Arial',
+    backgroundColor: '#17819c'
   },
   overlay: {
     position: 'absolute',
-    top: '0',
-    left: '0',
+    top: 0, // non-numeric string for motions
+    left: 0, // non-numeric string for motions
     width: '100%',
     height: '100%',
   },
@@ -29,13 +29,14 @@ const dimension = {
     fontSize: '18px',
     color: 'white',
     position: 'absolute',
-    top: '47%',
+    top: '50%',
     left: '50%'
   },
   subtitleText: {
     position: 'relative',
     left: '-50%',
-    padding: '30px 40px',
+    height: '80px', // hoverbox dimensions
+    width: '180px', // hoverbox dimensions
     border: '3px solid white'
   },
   image: {
@@ -97,7 +98,7 @@ class HoverImage extends Component {
               opacity: interpolate.imageOpacity
             };
             let animateTitle = {
-               marginTop: interpolate.marginTop + '%'
+               marginTop: `${interpolate.marginTop}%`
             };
             let animateSubtitle = {
                opacity: interpolate.opacity

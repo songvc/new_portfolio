@@ -8,7 +8,7 @@ const portfolioData = [
     name: 'hello',
     imgSrc: 'https://static.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg',
     path: 'https://static.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg',
-    description: 'hello'
+    description: 'Lorem ipsum dolor'
   },
   {
     id: '2',

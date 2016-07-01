@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../Layout';
+import Title from '../Title';
 
 class Blog extends Component {
   componentWillMount() {
@@ -17,7 +18,7 @@ class Blog extends Component {
   render() {
     return (
       <Layout page='blog'>
-        <div>Blog</div>
+        <Title>Blog</Title>
       </Layout>
     );
   }

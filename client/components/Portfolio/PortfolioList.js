@@ -28,7 +28,7 @@ class PortfolioList extends Component {
       <Flexbox {...dimension.flexBox}>
         {portfolios.map((portfolio) => {
           return (
-            <FlexItem {...dimension.flexItem}>
+            <FlexItem key={portfolio.id} {...dimension.flexItem}>
               <HoverImage key={portfolio.id} data={portfolio} />
             </FlexItem>
           )
