@@ -42,7 +42,9 @@ class MenuLink extends Component {
   }
 
   render() {
+
     const css = Object.assign({}, dimension, style.base, this.state.isHovering && style.hover);
+
     return (
       <div
         style={css}
