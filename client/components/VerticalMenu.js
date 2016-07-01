@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SlideLink from './SlideLink';
 import { Flexbox, FlexItem } from 'flexbox-react';
 
-const layout = {
+const dimension = {
   flexBox: {
     display: 'flex',
     flexDirection: 'column',
@@ -49,11 +49,11 @@ const menus = [
 class VerticalMenu extends Component {
   render() {
     return (
-      <Flexbox {...layout.flexBox}>
+      <Flexbox {...dimension.flexBox}>
         {
           menus.map((menu) => {
             return (
-              <FlexItem key={menu.id} {...layout.flexItem}>
+              <FlexItem key={menu.id} {...dimension.flexItem}>
                 <SlideLink message={menu}/>
               </FlexItem>
             )

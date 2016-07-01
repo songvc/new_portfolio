@@ -3,14 +3,14 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    height: '100'
+    height: '100%'
   },
   nested:{
     flex: '1 50%'
   },
   flexItem: {
     flex: '1',
-    width: '50'
+    width: '50%'
   },
   mediaQueries: {
     '@media (maxWidth: 540px)': {

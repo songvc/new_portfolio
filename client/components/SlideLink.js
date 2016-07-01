@@ -21,18 +21,18 @@ class SlideLink extends Component {
 
   render() {
     const { name, color, icon } = this.props.message;
-    const divStyle = { ...styles.divStyle.base, "backgroundColor": color };
-    const linkHover = Object.assign({}, styles.linkStyle.base, this.state.isHovering && styles.linkStyle.isHovering);
-    const iconHover = Object.assign({}, styles.iconStyle.base, this.state.isHovering && styles.iconStyle.isHovering);
+    const divCSS = { ...styles.divStyle.base, "backgroundColor": color };
+    const linkCSS = Object.assign({}, styles.linkStyle.base, this.state.isHovering && styles.linkStyle.hover);
+    const iconCSS = Object.assign({}, styles.iconStyle.base, this.state.isHovering && styles.iconStyle.hover);
 
     return (
       <div
-        style={divStyle}
+        style={divCSS}
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}
         onClick={this.handleClick.bind(this)}>
-        <strong style={linkHover}>{name}</strong>
-        <Icon name={icon} size='3x' style={iconHover}/>
+        <strong style={linkCSS}>{name}</strong>
+        <Icon style={iconCSS} name={icon} size='3x' />
       </div>
     );
   }

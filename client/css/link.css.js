@@ -19,7 +19,7 @@ const styles = {
       letterSpacing: '0.1em',
       display: 'block'
     },
-    isHovering: {
+    hover: {
       visibility: 'hidden'
     }
   },
@@ -32,7 +32,7 @@ const styles = {
       visibility: 'hidden',
       transition:'left 0.3s',
     },
-    isHovering: {
+    hover: {
       visibility: 'visible',
       left: '50%'
     }

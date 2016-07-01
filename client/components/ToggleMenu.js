@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { spring, Motion } from 'react-motion';
 
-const layout = {
-  position: 'fixed',
-  top: '0',
-  left: '0',
+const dimension = {
+  position: 'relative',
   height: '60px',
   width: '60px',
   textAlign:'center',
@@ -20,9 +18,6 @@ const style = {
   cursor: 'pointer'
 }
 
-const textStyle= {
-  lineHeight: '30px'
-}
 
 class ToggleMenu extends Component {
 
@@ -38,8 +33,10 @@ class ToggleMenu extends Component {
   }
 
   render() {
+    const css = { ...dimension, ...style }
+
     return (
-      <div style={Object.assign(layout, style)}
+      <div style={css}
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}>
         <Motion

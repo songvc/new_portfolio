@@ -97,7 +97,7 @@ class frontPage extends Component {
     return (
       <div style={rootStyle}>
         <LinkContainer children={tree} />
-        <SpinningIcon position={{"top":"50%", "left":"50%"}} />
+        <SpinningIcon position={{top:'50%', left:'50%'}} />
       </div>
     )
   }

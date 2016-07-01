@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
-const layout = {
+const dimension = {
+  display: 'flex',
+  alignItems: 'center',
   height: '100%',
   weight: '100%',
-  textAlign: 'center'
+  textAlign: 'center',
 }
 
 const style = {
   base: {
-    backgroundColor: 'Red'
+    backgroundColor: '#3a4145',
+    fontSize: '15px',
+    cursor: 'pointer'
   },
   hover: {
-    backgroundColor: 'Red'
+    backgroundColor: '#545B5F'
   }
+}
+
+const textStyle ={
+  color: 'white',
+  margin: '0 15px'
 }
 
 class MenuLink extends Component {
@@ -33,15 +42,14 @@ class MenuLink extends Component {
   }
 
   render() {
-    const { color } = this.props;
-
+    const css = Object.assign({}, dimension, style.base, this.state.isHovering && style.hover);
     return (
       <div
-        style={layout}
+        style={css}
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}
         onClick={this.handleClick.bind(this)}>
-        <p style={linkHover}>{this.props.children}</p>
+        <p style={textStyle}>{this.props.children}</p>
       </div>
     );
   }

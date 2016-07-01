@@ -3,26 +3,25 @@ import ToggleMenu from './ToggleMenu';
 import MenuLink from './MenuLink';
 import { Flexbox, FlexItem } from 'flexbox-react';
 
-const flexbox = {
-  container: {
+const dimension = {
+  flexBox: {
     display: 'flex',
     flexDirection: 'row',
-    width: '100',
-    height: '60px'
+    width: '100%',
+    height: '60px',
+    justifyContent: 'flex-start'
   },
-  flexIcon: {
-    flex: '1'
-  },
-  flexCenter: {
-    flex: '1',
-  },
-  flexMenus: {
-    flex: '1'
+  flexItem: {
+    icon: {
+      flex: '1',
+    },
+    center: {
+      width: '100%'
+    },
+    menus: {
+      flex: '1'
+    }
   }
-}
-
-const layout = {
-
 }
 
 const style = {
@@ -32,19 +31,24 @@ const style = {
 class Header extends Component {
   render() {
     return (
-      <Flexbox style={Object.assign(layout, style)} {...flexbox.container}>
-        <FlexItem onClick={this.props.toggleMenu} {...flexbox.flexItem}>
+
+      <Flexbox style={style} {...dimension.flexBox}>
+
+        <FlexItem onClick={this.props.toggleMenu} {...dimension.flexItem.icon}>
           <ToggleMenu />
         </FlexItem>
-        <FlexItem  {...flexbox.flexItem}>
 
+        <FlexItem  {...dimension.flexItem.center}>
         </FlexItem>
-        <FlexItem  {...flexbox.flexItem}>
 
+        <FlexItem  {...dimension.flexItem.menu}>
+          <MenuLink message={{path:'/portfolio'}}>PORTFOLIO</MenuLink>
         </FlexItem>
-        <FlexItem  {...flexbox.flexItem}>
 
+        <FlexItem  {...dimension.flexItem.menu}>
+          <MenuLink message={{path:'/lab'}}>LAB</MenuLink>
         </FlexItem>
+
       </Flexbox>
     )
   }
