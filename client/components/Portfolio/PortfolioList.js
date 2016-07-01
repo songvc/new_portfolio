@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import HoverImage from '../HoverImage';
 
-class PortflioList extends Component {
+class PortfolioList extends Component {
+  constructor(props){
+    super(props);
+  }
 
   render() {
-
-    const portfolios = this.props.data;
+    console.log(this.props.portfolios);
+    const { portfolios } = this.props;
 
     return (
       <div>
-        {
-          portfolios.map((portfolio) => {
-            return (
-              <HoverImage src={portfolio.imgSrc} description={portfolio.description}>
-                {portfolio.name}
-              </HoverImage>
-            )
-          })
-        }
+        {portfolios.map((portfolio) => {
+          return (
+            <HoverImage key={portfolio.id} data={portfolio} />
+          )
+        })}
       </div>
     )
   }
 }
+
+export default PortfolioList;

@@ -31,16 +31,17 @@ class HoverImage extends Component {
   }
 
   handleClick() {
-    browserHistory.push(this.props.message.path);
+    browserHistory.push(this.props.path);
   }
 
   handleHover() {
-    this.setState({ isHovering: !this.state.isHovering })
+    this.setState({ isHovering: !this.state.isHovering });
   }
 
   render() {
 
-    const { src, description } = this.props
+    const { name, src, description } = this.props.data;
+    const css = Object.assign({}, dimension, style.base, this.state.isHovering && style.hover);
 
     return (
       <div
@@ -48,7 +49,7 @@ class HoverImage extends Component {
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}
         onClick={this.handleClick.bind(this)}>
-        <p style={textStyle}>{this.props.children}</p>
+        <p style={textStyle}>{name}</p>
         <p>{description}</p>
         <img src={src} />
       </div>

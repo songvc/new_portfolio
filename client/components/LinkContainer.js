@@ -7,8 +7,8 @@ class LinkContainer extends Component {
 
   render() {
 
-    const {data} = this.props.children;
-    const {children} = this.props.children;
+    const { data } = this.props.children;
+    const { children } = this.props.children;
     const style = data.nested ? { ...styles.base, ...styles.nested } : styles.base;
     const mediaQueries = data.nested ? styles.mediaQueries : styles.mediaQueries;
 
