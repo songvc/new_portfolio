@@ -1,5 +1,20 @@
 import React, { Component } from 'react';
 import HoverImage from '../HoverImage';
+import { Flexbox, FlexItem } from 'flexbox-react';
+
+const dimension = {
+  flexBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: '100%',
+  },
+  flexItem: {
+    flex: '1',
+    width: '20%',
+    height: '250px'
+  }
+}
 
 class PortfolioList extends Component {
   constructor(props){
@@ -11,13 +26,15 @@ class PortfolioList extends Component {
     const { portfolios } = this.props;
 
     return (
-      <div>
+      <Flexbox {...dimension.flexBox}>
         {portfolios.map((portfolio) => {
           return (
-            <HoverImage key={portfolio.id} data={portfolio} />
+            <FlexItem {...dimension.flexItem}>
+              <HoverImage key={portfolio.id} data={portfolio} />
+            </FlexItem>
           )
         })}
-      </div>
+      </Flexbox>
     )
   }
 }

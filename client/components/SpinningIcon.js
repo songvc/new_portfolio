@@ -42,9 +42,9 @@ class CenterIcon extends Component {
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}>
         <Motion defaultStyle={{x: 0}} style={{x: spring(this.state.isHovering && 360)}}>
-          {current => {
+          {interpolate => {
             let innerStyle = {
-              transform: `rotate(${current.x}deg)`
+              transform: `rotate(${interpolate.x}deg)`
             }
             return (
               <div style={innerStyle}>VS</div>

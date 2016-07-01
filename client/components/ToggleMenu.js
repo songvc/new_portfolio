@@ -45,15 +45,15 @@ class ToggleMenu extends Component {
           x: spring(this.state.isHovering && 45)
          }}>
 
-          {current => {
+          {interpolate => {
             let cubeStyle1 = {
               position: 'absolute',
               top: 5,
-              left: 5 + current.x,
+              left: 5 + interpolate.x,
               height: '5px',
               width: '5px',
               backgroundColor:"#3ec8ac",
-              transform: `rotate(${current.degree}deg)`
+              transform: `rotate(${interpolate.degree}deg)`
             }
 
             return (
@@ -68,15 +68,15 @@ class ToggleMenu extends Component {
           x: spring(this.state.isHovering && 45)
          }}>
 
-          {current => {
+          {interpolate => {
             let cubeStyle2 = {
               position: 'absolute',
               bottom: 5,
-              right: 5 + current.x,
+              right: 5 + interpolate.x,
               height: '5px',
               width: '5px',
               backgroundColor:"#3ec8ac",
-              transform: `rotate(${current.degree}deg)`
+              transform: `rotate(${interpolate.degree}deg)`
             }
 
             return (
