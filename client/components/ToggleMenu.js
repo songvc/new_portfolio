@@ -32,6 +32,19 @@ class ToggleMenu extends Component {
     this.setState({ isHovering: !this.state.isHovering });
   }
 
+  getSpringProps() {
+    return {
+      defaultStyle: {
+        xAxis: 0,
+        degree: 0
+      },
+      style:{
+        xAxis: spring(this.state.isHovering && 45),
+        degree: spring(this.state.isHovering && 720)
+      },
+    };
+  }
+
   render() {
     const css = { ...dimension, ...style }
 
@@ -39,17 +52,13 @@ class ToggleMenu extends Component {
       <div style={css}
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}>
-        <Motion
-          defaultStyle={{degree: 0, x:0, scale:0}}
-          style={{degree: spring(this.state.isHovering && 720),
-          x: spring(this.state.isHovering && 45)
-         }}>
+        <Motion {...this.getSpringProps()}>
 
           {interpolate => {
-            let cubeStyle1 = {
+            let animateCube1 = {
               position: 'absolute',
               top: 5,
-              left: 5 + interpolate.x,
+              left: 5 + interpolate.xAxis,
               height: '5px',
               width: '5px',
               backgroundColor:"#3ec8ac",
@@ -57,22 +66,18 @@ class ToggleMenu extends Component {
             }
 
             return (
-              <div style={cubeStyle1}></div>
+              <div style={animateCube1}></div>
             )
           }}
         </Motion>
         <div>VS</div>
-        <Motion
-          defaultStyle={{degree: 0, x:0, scale:0 }}
-          style={{degree: spring(this.state.isHovering && 720),
-          x: spring(this.state.isHovering && 45)
-         }}>
+        <Motion {...this.getSpringProps()}>
 
           {interpolate => {
-            let cubeStyle2 = {
+            let animateCube2 = {
               position: 'absolute',
               bottom: 5,
-              right: 5 + interpolate.x,
+              right: 5 + interpolate.xAxis,
               height: '5px',
               width: '5px',
               backgroundColor:"#3ec8ac",
@@ -80,7 +85,7 @@ class ToggleMenu extends Component {
             }
 
             return (
-              <div style={cubeStyle2}></div>
+              <div style={animateCube2}></div>
             )
           }}
         </Motion>

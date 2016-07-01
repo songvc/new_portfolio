@@ -22,7 +22,6 @@ class PortfolioList extends Component {
   }
 
   render() {
-    console.log(this.props.portfolios);
     const { portfolios } = this.props;
 
     return (
