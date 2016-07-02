@@ -43,6 +43,8 @@ class Layout extends Component {
         <OffCanvasBody style={{fontSize: '30px'}}>
           <Header>
             <SpinMenu onClick={this.toggleMenu.bind(this)}/>
+            <div></div>
+            <div></div>
             <MenuLink path={`/${leftMenu}`}>{leftMenu}</MenuLink>
             <MenuLink path={`/${rightMenu}`}>{rightMenu}</MenuLink>
           </Header>
