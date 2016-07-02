@@ -1,67 +1,49 @@
 import React, { Component } from 'react';
 import SlideLink from './SlideLink';
-import { Flexbox, FlexItem } from 'flexbox-react';
+import { StyleSheet, css } from 'aphrodite';
 
-const dimension = {
-  flexBox: {
+const styles = StyleSheet.create({
+  vmContainer: {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    height: '100vh',
+    height: '100vh'
   },
-  flexItem: {
-    flex: '1',
-    height: '25%'
+  vmFlex: {
+    flex: '1 25%'
   }
-}
+})
 
-const menus = [
-  {
-    "id": "1",
-    "name": "Home",
-    "path" : "/",
-    "color" : "#F2D194",
-    "icon" : "bars"
-  },
-  {
-    "id": "2",
-    "name": "Blog",
-    "path" : "/blog",
-    "color" : "#AAC39C",
-    "icon" : "feed"
-  },
-  {
-    "id": "3",
-    "name": "Portfolio",
-    "path" : "/portfolio",
-    "color" : "#5A86BF",
-    "icon" : "camera-retro"
-  },
-  {
-    "id": "4",
-    "name": "Lab",
-    "path" : "/lab",
-    "color" : "#D95A4E",
-    "icon" : "archive"
-  }
-]
+// const dimension = {
+//   flexBox: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     width: '100%',
+//     height: '100vh',
+//   },
+//   flexItem: {
+//     flex: '1',
+//     height: '25%'
+//   }
+// }
 
-class VerticalMenu extends Component {
-  render() {
-    return (
-      <Flexbox {...dimension.flexBox}>
-        {
-          menus.map((menu) => {
-            return (
-              <FlexItem key={menu.id} {...dimension.flexItem}>
-                <SlideLink message={menu}/>
-              </FlexItem>
-            )
-          })
-        }
-      </Flexbox>
-    )
-  }
+const VerticalMenu = () => {
+  return (
+    <nav className={css(styles.vmContainer)}>
+      <div className={css(styles.vmFlex)}>
+        <SlideLink path='/' color='#F2D194' icon='bars'>Home</SlideLink>
+      </div>
+      <div className={css(styles.vmFlex)}>
+        <SlideLink path='/blog' color='#AAC39C' icon='feed'>Blog</SlideLink>
+      </div>
+      <div className={css(styles.vmFlex)}>
+        <SlideLink path='/portfolio' color='#5A86BF' icon='camera-retro'>Portfolio</SlideLink>
+      </div>
+      <div className={css(styles.vmFlex)}>
+        <SlideLink path='/lab' color='#D95A4E' icon='archive'>Lab</SlideLink>
+      </div>
+    </nav>
+  )
 }
 
 export default VerticalMenu;

@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
 import { spring, Motion } from 'react-motion';
+import { StyleSheet, css } from 'aphrodite';
 
-const dimension = {
-  position: 'relative',
-  height: '60px',
-  width: '60px',
-  textAlign:'center',
-}
+const styles = StyleSheet.create({
+  spinContainer: {
+    position: 'relative',
+    height: '60px',
+    width: '60px',
+    backgroundColor: 'white',
+    textAlign:'center',
+    cursor: 'pointer'
+  },
+  spinText: {
+    color: '#3a4145',
+    fontFamily: 'Futura',
+    fontWeight: '800',
+    fontSize: '36px',
+    lineHeight: '60px'
+  },
+  spinCube: {
+    position: 'absolute',
+    height: '5px',
+    width: '5px',
+    backgroundColor:"#3ec8ac"
+  }
+})
 
-const style = {
-  color: '#3a4145',
-  backgroundColor: 'white',
-  fontFamily: 'Futura',
-  fontWeight: '800',
-  fontSize: '36px',
-  lineHeight: '60px',
-  cursor: 'pointer'
-}
-
-
-class ToggleMenu extends Component {
+class SpinMenu extends Component {
 
   constructor(props) {
     super(props);
@@ -46,46 +53,35 @@ class ToggleMenu extends Component {
   }
 
   render() {
-    const css = { ...dimension, ...style }
 
     return (
-      <div style={css}
+      <div className={css(styles.spinContainer)}
         onMouseOver={this.handleHover.bind(this)}
         onMouseOut={this.handleHover.bind(this)}>
         <Motion {...this.getSpringProps()}>
-
           {interpolate => {
             let animateCube1 = {
-              position: 'absolute',
               top: 5,
               left: 5 + interpolate.xAxis,
-              height: '5px',
-              width: '5px',
-              backgroundColor:"#3ec8ac",
               transform: `rotate(${interpolate.degree}deg)`
             }
 
             return (
-              <div style={animateCube1}></div>
+              <div className={css(styles.spinCube)} style={animateCube1}></div>
             )
           }}
         </Motion>
-        <div>VS</div>
+        <div className={css(styles.spinText)}>VS</div>
         <Motion {...this.getSpringProps()}>
-
           {interpolate => {
             let animateCube2 = {
-              position: 'absolute',
               bottom: 5,
               right: 5 + interpolate.xAxis,
-              height: '5px',
-              width: '5px',
-              backgroundColor:"#3ec8ac",
               transform: `rotate(${interpolate.degree}deg)`
             }
 
             return (
-              <div style={animateCube2}></div>
+              <div className={css(styles.cubeStyle)} style={animateCube2}></div>
             )
           }}
         </Motion>
@@ -94,4 +90,4 @@ class ToggleMenu extends Component {
   }
 }
 
-export default ToggleMenu;
+export default SpinMenu;

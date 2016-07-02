@@ -1,41 +1,52 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
-import styles from '../css/link.css';
+import { StyleSheet, css } from 'aphrodite';
+import { Link } from 'react-router';
 import Icon from 'react-fontawesome';
 
-class SlideLink extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      isHovering: false
+const styles = StyleSheet.create({
+  slidelinkContainer: {
+    position: 'relative',
+    weight:  '100%',
+    height:  '100%',
+    display: 'block',
+    cursor:  'pointer',
+    overflow: 'hidden',
+    textDecoration: 'none',
+    color: 'black',
+    ':hover strong': {
+      left: '150%'
+    },
+    ':hover span': {
+      left: '50%'
     }
+  },
+  slidelinkText: {
+    position: 'absolute',
+    top: '50%',
+    left:'50%',
+    transform: 'translate3d(-50%,-50%,0)',
+    textTransform:'uppercase',
+    fontSize: '1.2em',
+    letterSpacing: '0.1em',
+    transition: 'all .3s ease-in-out',
+  },
+  slidelinkIcon: {
+    position:'absolute',
+    top: '50%',
+    left:'-50%',
+    transform: 'translate3d(-50%,-50%,0)',
+    transition: 'all .3s ease-in-out',
   }
+});
 
-  handleClick() {
-    browserHistory.push(this.props.message.path);
-  }
-
-  handleHover() {
-    this.setState({ isHovering: !this.state.isHovering })
-  }
-
-  render() {
-    const { name, color, icon } = this.props.message;
-    const divCSS = { ...styles.divStyle.base, "backgroundColor": color };
-    const linkCSS = Object.assign({}, styles.linkStyle.base, this.state.isHovering && styles.linkStyle.hover);
-    const iconCSS = Object.assign({}, styles.iconStyle.base, this.state.isHovering && styles.iconStyle.hover);
-
-    return (
-      <div
-        style={divCSS}
-        onMouseOver={this.handleHover.bind(this)}
-        onMouseOut={this.handleHover.bind(this)}
-        onClick={this.handleClick.bind(this)}>
-        <strong style={linkCSS}>{name}</strong>
-        <Icon style={iconCSS} name={icon} size='3x' />
-      </div>
-    );
-  }
+const SlideLink = ({ path, color, icon, children }) => {
+  return (
+    <Link className={css(styles.slidelinkContainer)} style={{ backgroundColor:color }} to={path}>
+      <strong className={css(styles.slidelinkText)}>{children}</strong>
+      <Icon className={css(styles.slidelinkIcon)} name={icon} size='3x'/>
+    </Link>
+  )
 }
+
 
 export default SlideLink;
