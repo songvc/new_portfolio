@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     display: 'block',
     cursor:  'pointer',
     overflow: 'hidden',
-    textDecoration: 'none',
     color: 'black',
     ':hover strong': {
       left: '150%'
@@ -46,6 +45,13 @@ const SlideLink = ({ path, color, icon, children }) => {
       <Icon className={css(styles.slidelinkIcon)} name={icon} size='3x'/>
     </Link>
   )
+}
+
+SlideLink.propTypes = {
+  path: React.PropTypes.string.isRequired,
+  color: React.PropTypes.string.isRequired,
+  icon: React.PropTypes.string.isRequired,
+  children: React.PropTypes.string.isRequired
 }
 
 

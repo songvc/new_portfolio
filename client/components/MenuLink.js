@@ -13,10 +13,9 @@ const styles = StyleSheet.create({
     fontSize: '15px',
     textAlign: 'center',
     textTransform: 'uppercase',
-    textDecoration: 'none',
-    padding: '0px 25px',
+    backgroundColor: '#545B5F',
     ':hover': {
-      backgroundColor: '#545B5F'
+      backgroundColor: '#6E7579'
     }
   }
 })
@@ -25,6 +24,11 @@ const MenuLink = ({path, children}) => {
   return (
     <Link className={css(styles.menuLink)} to={path}>{children}</Link>
   )
+}
+
+MenuLink.propTypes = {
+  path: React.PropTypes.string.isRequired,
+  children: React.PropTypes.string.isRequired
 }
 
 export default MenuLink;

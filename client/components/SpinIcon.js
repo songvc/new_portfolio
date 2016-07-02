@@ -34,4 +34,9 @@ const SpinIcon = ({top, left}) => {
   )
 }
 
+SpinIcon.propTypes = {
+  top: React.PropTypes.string.isRequired,
+  left: React.PropTypes.string.isRequired
+}
+
 export default SpinIcon;

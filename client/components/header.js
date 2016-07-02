@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     width: '100%',
-    height: '60px'
-    // justifyContent: 'flex-start'
+    height: '60px',
+    backgroundColor: '#545B5F'
   },
   headerIcon: {
     color: 'white'
@@ -22,14 +22,16 @@ const styles = StyleSheet.create({
   }
 })
 
-const Header = ({leftMenu, rightMenu}) => {
+const Header = ({children}) => {
   return (
-    <header className={css(styles.header)}>
-      <SpinMenu className={css(styles.headerIcon)} />
-      <MenuLink className={css(styles.headerMenus)} path={`/${leftMenu}`}>{leftMenu}</MenuLink>
-      <MenuLink className={css(styles.headerMenus)} path={`/${rightMenu}`}>{rightMenu}</MenuLink>
-    </header>
+    <nav className={css(styles.header)}>
+      {children}
+    </nav>
   )
+}
+
+Header.propTypes = {
+  children: React.PropTypes.array.isRequired
 }
 
 export default Header;

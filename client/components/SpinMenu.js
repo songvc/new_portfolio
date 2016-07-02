@@ -1,15 +1,42 @@
 import React, { Component } from 'react';
-import { spring, Motion } from 'react-motion';
 import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
   spinContainer: {
     position: 'relative',
-    height: '60px',
-    width: '60px',
-    backgroundColor: 'white',
+    height: '100%',
+    minWidth: '60px',
     textAlign:'center',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    backgroundColor: 'white',
+    ':before': {
+      content: "''",
+      position: 'absolute',
+      height: '5px',
+      width: '5px',
+      top: '10%',
+      left: '10%',
+      backgroundColor:"#3ec8ac",
+      transition: 'transform 0.5s ease-out'
+    },
+    ':after': {
+      content: "''",
+      position: 'absolute',
+      height: '5px',
+      width: '5px',
+      bottom: '10%',
+      right: '10%',
+      backgroundColor:"#3ec8ac",
+      transition: 'transform 0.5s ease-out'
+    },
+    ':hover:before': {
+      backgroundColor: '#0B9579',
+      transform: 'translateX(850%) rotate(1turn)'
+    },
+    ':hover:after': {
+      backgroundColor: '#0B9579',
+      transform: 'translate3d(-850%,0,0) rotate(1turn)'
+    }
   },
   spinText: {
     color: '#3a4145',
@@ -17,77 +44,19 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     fontSize: '36px',
     lineHeight: '60px'
-  },
-  spinCube: {
-    position: 'absolute',
-    height: '5px',
-    width: '5px',
-    backgroundColor:"#3ec8ac"
   }
 })
 
-class SpinMenu extends Component {
+const SpinMenu = (props) => {
+  return (
+    <div onClick={props.onClick} className={css(styles.spinContainer)}>
+      <div className={css(styles.spinText)}>VS</div>
+    </div>
+  )
+}
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isHovering: false
-    };
-  }
-
-  handleHover() {
-    this.setState({ isHovering: !this.state.isHovering });
-  }
-
-  getSpringProps() {
-    return {
-      defaultStyle: {
-        xAxis: 0,
-        degree: 0
-      },
-      style:{
-        xAxis: spring(this.state.isHovering && 45),
-        degree: spring(this.state.isHovering && 720)
-      },
-    };
-  }
-
-  render() {
-
-    return (
-      <div className={css(styles.spinContainer)}
-        onMouseOver={this.handleHover.bind(this)}
-        onMouseOut={this.handleHover.bind(this)}>
-        <Motion {...this.getSpringProps()}>
-          {interpolate => {
-            let animateCube1 = {
-              top: 5,
-              left: 5 + interpolate.xAxis,
-              transform: `rotate(${interpolate.degree}deg)`
-            }
-
-            return (
-              <div className={css(styles.spinCube)} style={animateCube1}></div>
-            )
-          }}
-        </Motion>
-        <div className={css(styles.spinText)}>VS</div>
-        <Motion {...this.getSpringProps()}>
-          {interpolate => {
-            let animateCube2 = {
-              bottom: 5,
-              right: 5 + interpolate.xAxis,
-              transform: `rotate(${interpolate.degree}deg)`
-            }
-
-            return (
-              <div className={css(styles.cubeStyle)} style={animateCube2}></div>
-            )
-          }}
-        </Motion>
-      </div>
-    )
-  }
+SpinMenu.propTypes = {
+  onClick: React.PropTypes.func
 }
 
 export default SpinMenu;

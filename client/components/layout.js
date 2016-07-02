@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import VerticalMenu from './VerticalMenu';
+import MenuLink from './MenuLink'
+import SpinMenu from './SpinMenu';
+import VMenu from './VMenu';
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
 
 class Layout extends Component {
@@ -18,7 +20,7 @@ class Layout extends Component {
   }
 
   getMenus(page) {
-    //conditionally render different menus depends on pages
+    // render different headers depending on pages
     // blog -> lab, portfolio
     // lab  -> portfolio, blog
     // portfolio -> blog, lab
@@ -39,11 +41,15 @@ class Layout extends Component {
     return (
       <OffCanvas width={300} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={'left'}>
         <OffCanvasBody style={{fontSize: '30px'}}>
-          <Header toggleAction={this.toggleMenu.bind(this)} leftMenu={leftMenu} rightMenu={rightMenu}/>
+          <Header>
+            <SpinMenu onClick={this.toggleMenu.bind(this)}/>
+            <MenuLink path={`/${leftMenu}`}>{leftMenu}</MenuLink>
+            <MenuLink path={`/${rightMenu}`}>{rightMenu}</MenuLink>
+          </Header>
           {this.props.children}
         </OffCanvasBody>
         <OffCanvasMenu>
-          <VerticalMenu />
+          <VMenu />
         </OffCanvasMenu>
       </OffCanvas>
     );
