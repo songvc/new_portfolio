@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
-  spinContainer: {
+  container: {
     position: 'relative',
     height: '100%',
-    minWidth: '60px',
+    width: '60px',
     textAlign:'center',
     cursor: 'pointer',
     backgroundColor: 'white',
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
       transform: 'translate3d(-850%,0,0) rotate(1turn)'
     }
   },
-  spinText: {
+  text: {
     color: '#3a4145',
     fontFamily: 'Futura',
     fontWeight: '800',
@@ -47,10 +47,10 @@ const styles = StyleSheet.create({
   }
 })
 
-const SpinMenu = (props) => {
+const SpinMenu = ({onClick}) => {
   return (
-    <div onClick={props.onClick} className={css(styles.spinContainer)}>
-      <div className={css(styles.spinText)}>VS</div>
+    <div onClick={onClick} className={css(styles.container)}>
+      <div className={css(styles.text)}>VS</div>
     </div>
   )
 }

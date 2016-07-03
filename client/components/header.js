@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import SpinMenu from './SpinMenu';
 import MenuLink from './MenuLink';
 import { StyleSheet, css } from 'aphrodite';
+import { Flex, Box } from 'reflexbox';
 
 const styles = StyleSheet.create({
   header: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
-    height: '60px',
     backgroundColor: '#545B5F'
   },
   headerIcon: {
@@ -22,16 +19,21 @@ const styles = StyleSheet.create({
   }
 })
 
-const Header = ({children}) => {
+const Header = ({toggleMenu, leftMenu, rightMenu}) => {
   return (
-    <nav className={css(styles.header)}>
-      {children}
-    </nav>
+    <Flex className={css(styles.header)}>
+      <Box col={1}><SpinMenu onClick={toggleMenu}/></Box>
+      <Box col={9}></Box>
+      <Box col={1}><MenuLink path={`/${leftMenu}`}>{leftMenu}</MenuLink></Box>
+      <Box col={2}><MenuLink path={`/${rightMenu}`}>{rightMenu}</MenuLink></Box>
+    </Flex>
   )
 }
 
 Header.propTypes = {
-  children: React.PropTypes.array.isRequired
+  toggleMenu: React.PropTypes.func.isRequired,
+  leftMenu: React.PropTypes.string.isRequired,
+  rightMenu: React.PropTypes.string.isRequired
 }
 
 export default Header;

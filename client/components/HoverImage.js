@@ -1,131 +1,109 @@
 import React, { Component } from 'react';
 import { spring, Motion } from 'react-motion';
+import { StyleSheet, css } from 'aphrodite';
+import { Link } from 'react-router';
 
-const dimension = {
-  container: {
+const styles = StyleSheet.create({
+  figure: {
+    display: 'block',
     position: 'relative',
+    width: '100%',
     height: '100%',
-    weight: '100%',
+    background: '#3085a3',
+    textAlign: 'center',
     cursor: 'pointer',
     overflow: 'hidden',
-    fontFamily: 'Arial',
-    backgroundColor: '#17819c'
+    margin: '0',
+    ':hover h2': {
+      transform: 'translate3d(0,-10px,0)'
+    },
+    ':hover h2:after': {
+      opacity: '1',
+      transform: 'translate3d(0,-30px,0)'
+    },
+    ':hover p': {
+      opacity: '1',
+      transform: 'translate3d(0,-60px,0)'
+    }
+  },
+  image: {
+    display: 'block',
+    position: 'relative',
+    minHeight: '100%',
+    maxWidth: '100%',
+    opacity: '0.8'
+  },
+  figCaption: {
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100%',
+    padding: '0.8em',
+    color: '#fff',
+    textTransform: 'uppercase',
+    fontSize: '0.8em',
+    textAlign: 'right'
+  },
+  title: {
+    position: 'absolute',
+    top: '50px',
+    right: '30px',
+    left: '30px',
+    wordSpacing: '-0.15em',
+    fontWeight: '300',
+    transition: 'transform 0.3s',
+    margin: '0',
+
+    ':after': {
+      content: "''",
+      position: 'absolute',
+      top: '200%',
+      left: '0',
+      width: '100%',
+      height: '4px',
+      background: '#fff',
+      opacity: '0',
+      transition: 'all 0.3s'
+    }
+  },
+  description: {
+    position: 'absolute',
+    right: '30px',
+    bottom: '-50px',
+    padding: '0',
+    opacity: '0',
+    fontSize: '0.6em',
+    transition: 'all 0.3s'
   },
   overlay: {
     position: 'absolute',
-    top: 0, // non-numeric string for motions
-    left: 0, // non-numeric string for motions
+    top: '0',
+    left: '0',
     width: '100%',
     height: '100%',
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: '30px',
-    color: 'white',
-    fontWeight: 'bold'
-  },
-  subTitle: {
-    textAlign: 'center',
-    fontSize: '18px',
-    color: 'white',
-    position: 'absolute',
-    top: '50%',
-    left: '50%'
-  },
-  subtitleText: {
-    position: 'relative',
-    left: '-50%',
-    height: '80px', // hoverbox dimensions
-    width: '180px', // hoverbox dimensions
-    border: '3px solid white'
-  },
-  image: {
-    cursor: 'pointer',
-    position: 'relative',
-    verticalAlign: 'middle'
+    zIndex: '1000'
   }
+});
+
+const HoverImage = ({ path, name, src, description }) => {
+  return (
+    <figure className={css(styles.figure)}>
+      <img className={css(styles.image)} src="http://tympanus.net/Development/HoverEffectIdeas/img/13.jpg" alt="img01"/>
+      <figcaption className={css(styles.figCaption)}>
+        <h2 className={css(styles.title)}>{name}</h2>
+        <p className={css(styles.description)}>{description}</p>
+        <a classname={css(styles.overlay)} href={path}></a>
+      </figcaption>
+    </figure>
+  )
 }
 
-
-
-class HoverImage extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      isHovering: false
-    }
-  }
-
-  handleClick() {
-    // browserHistory.push(this.props.path);
-  }
-
-  handleHover() {
-    this.setState({ isHovering: !this.state.isHovering });
-  }
-
-  getSpringProps() {
-    return {
-      defaultStyle: {
-        scale: 1.15,
-        marginTop: 25,
-        imageOpacity: 0.7,
-        opacity: 0,
-      },
-      style:{
-        scale: spring(this.state.isHovering ? 1 : 1.15),
-        marginTop: spring(this.state.isHovering ? 22 : 25),
-        imageOpacity: spring(this.state.isHovering ? 0.4 : 0.7),
-        opacity: spring(this.state.isHovering ? 1 : 0)
-      },
-    };
-  }
-
-  render() {
-
-    const { name, src, description } = this.props.data;
-
-    return (
-      <div
-        style={dimension.container}
-        onMouseOver={this.handleHover.bind(this)}
-        onMouseOut={this.handleHover.bind(this)}
-        onClick={this.handleClick.bind(this)}>
-        <Motion {...this.getSpringProps()}>
-          {interpolate => {
-            let animateImage = {
-              transform: `scale(${interpolate.scale})`,
-              opacity: interpolate.imageOpacity
-            };
-            let animateTitle = {
-               marginTop: `${interpolate.marginTop}%`
-            };
-            let animateSubtitle = {
-               opacity: interpolate.opacity
-            };
-           return (
-             <div>
-               <img
-                 style={Object.assign({}, dimension.image, animateImage)}
-                 src='http://tympanus.net/Development/HoverEffectIdeas/img/13.jpg'/>
-               <div style={dimension.overlay}>
-                 <div style={Object.assign({}, dimension.title, animateTitle)}>{name}</div>
-                 <div style={Object.assign({}, dimension.subTitle, animateSubtitle)}>
-                   <div style={dimension.subtitleText}>{description}</div>
-                 </div>
-               </div>
-             </div>
-           );
-          }}
-        </Motion>
-      </div>
-    );
-  }
+HoverImage.propTypes = {
+  path: React.PropTypes.string.isRequired,
+  name: React.PropTypes.string.isRequired,
+  src: React.PropTypes.string.isRequired,
+  description: React.PropTypes.string.isRequired
 }
-
-// <p style={textStyle}>{name}</p>
-// <p>{description}</p>
-// <img src={src} />
-
 
 export default HoverImage;

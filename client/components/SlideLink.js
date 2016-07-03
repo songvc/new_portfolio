@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import Icon from 'react-fontawesome';
 
 const styles = StyleSheet.create({
-  slidelinkContainer: {
+  container: {
     position: 'relative',
     weight:  '100%',
     height:  '100%',
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
       left: '50%'
     }
   },
-  slidelinkText: {
+  text: {
     position: 'absolute',
     top: '50%',
     left:'50%',
@@ -27,22 +27,22 @@ const styles = StyleSheet.create({
     textTransform:'uppercase',
     fontSize: '1.2em',
     letterSpacing: '0.1em',
-    transition: 'all .3s ease-in-out',
+    transition: 'left .3s ease-in-out',
   },
-  slidelinkIcon: {
+  icon: {
     position:'absolute',
     top: '50%',
     left:'-50%',
     transform: 'translate3d(-50%,-50%,0)',
-    transition: 'all .3s ease-in-out',
+    transition: 'left .3s ease-in-out',
   }
 });
 
 const SlideLink = ({ path, color, icon, children }) => {
   return (
-    <Link className={css(styles.slidelinkContainer)} style={{ backgroundColor:color }} to={path}>
-      <strong className={css(styles.slidelinkText)}>{children}</strong>
-      <Icon className={css(styles.slidelinkIcon)} name={icon} size='3x'/>
+    <Link className={css(styles.container)} style={{ backgroundColor:color }} to={path}>
+      <strong className={css(styles.text)}>{children}</strong>
+      <Icon className={css(styles.icon)} name={icon} size='3x'/>
     </Link>
   )
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
-  iconContainer: {
+  container: {
     position : 'absolute',
     height: '60px',
     width: '60px',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 const SpinIcon = ({top, left}) => {
   return (
     <span
-      className={css(styles.iconContainer, styles.icon)}
+      className={css(styles.container, styles.icon)}
       style={{top, left}}>
       VS
     </span>

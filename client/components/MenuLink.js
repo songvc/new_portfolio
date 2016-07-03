@@ -9,20 +9,23 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'white',
-    fontSize: '15px',
-    textAlign: 'center',
-    textTransform: 'uppercase',
     backgroundColor: '#545B5F',
     ':hover': {
       backgroundColor: '#6E7579'
     }
+  },
+  text: {
+    color: 'white',
+    fontSize: '15px',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    letterSpacing: '0.1em'
   }
 })
 
 const MenuLink = ({path, children}) => {
   return (
-    <Link className={css(styles.menuLink)} to={path}>{children}</Link>
+    <Link className={css(styles.menuLink, styles.text)} to={path}>{children}</Link>
   )
 }
 

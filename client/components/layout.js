@@ -28,7 +28,7 @@ class Layout extends Component {
       case 'blog':
         return ['lab', 'portfolio'];
       case 'lab':
-        return ['portfolio', 'blog'];
+        return ['blog', 'portfolio'];
       case 'portfolio':
         return ['blog', 'lab'];
     }
@@ -41,13 +41,7 @@ class Layout extends Component {
     return (
       <OffCanvas width={300} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={'left'}>
         <OffCanvasBody style={{fontSize: '30px'}}>
-          <Header>
-            <SpinMenu onClick={this.toggleMenu.bind(this)}/>
-            <div></div>
-            <div></div>
-            <MenuLink path={`/${leftMenu}`}>{leftMenu}</MenuLink>
-            <MenuLink path={`/${rightMenu}`}>{rightMenu}</MenuLink>
-          </Header>
+          <Header toggleMenu={this.toggleMenu.bind(this)} leftMenu={leftMenu} rightMenu={rightMenu} />
           {this.props.children}
         </OffCanvasBody>
         <OffCanvasMenu>
