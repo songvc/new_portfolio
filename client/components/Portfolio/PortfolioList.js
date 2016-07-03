@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import HoverImage from '../HoverImage';
 import { Flexbox, FlexItem } from 'flexbox-react';
+import { StyleSheet, css } from 'aphrodite';
+import { Flex, Box } from 'reflexbox';
 
 const dimension = {
   flexBox: {

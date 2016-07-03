@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { spring, Motion } from 'react-motion';
 import { StyleSheet, css } from 'aphrodite';
-import { Link } from 'react-router';
 
 const styles = StyleSheet.create({
   figure: {

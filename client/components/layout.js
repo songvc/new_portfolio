@@ -35,7 +35,7 @@ class Layout extends Component {
   }
 
   render() {
-
+ 
     const [leftMenu, rightMenu] = this.getMenus(this.props.page);
 
     return (
