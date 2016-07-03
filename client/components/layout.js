@@ -12,6 +12,7 @@ class Layout extends Component {
     this.setState({
       isMenuOpened: false
     })
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleMenu() {
@@ -35,13 +36,13 @@ class Layout extends Component {
   }
 
   render() {
- 
+
     const [leftMenu, rightMenu] = this.getMenus(this.props.page);
 
     return (
       <OffCanvas width={300} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={'left'}>
         <OffCanvasBody style={{fontSize: '30px'}}>
-          <Header toggleMenu={this.toggleMenu.bind(this)} leftMenu={leftMenu} rightMenu={rightMenu} />
+          <Header toggleMenu={this.toggleMenu} leftMenu={leftMenu} rightMenu={rightMenu} />
           {this.props.children}
         </OffCanvasBody>
         <OffCanvasMenu>
