@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Layout from '../Layout';
-import Title from '../Title';
 import { Flex, Box } from 'reflexbox';
 
 class Blog extends Component {
