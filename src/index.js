@@ -4,30 +4,34 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
+//MainPage Components
+import FrontPage from './components/MainPages/FrontPage';
+import Blog from './components/MainPages/Blog';
+import Lab from './components/MainPages/Lab';
+import Portfolio from './components/MainPages/Portfolio';
+import Admin from './components/MainPages/Admin';
+
 
 import reducers from './reducers';
+import App from './components/MainPages/App';
+
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 const store = createStoreWithMiddleware(reducers);
 
-//orginal
-import FrontPage from './components/MainPages/FrontPage';
-import BlogPage from './components/MainPages/BlogPage';
-import LabPage from './components/MainPages/LabPage';
-import PortfolioPage from './components/MainPages/PortfolioPage';
-import AdminPage from './components/MainPages/AdminPage';
 
-const rootStyle = {
-  "height": "inherit"
-}
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={FrontPage} />
-      <Route path="/blog" component={BlogPage} />
-      <Route path="/lab" component={LabPage} />
-      <Route path="/portfolio" component={PortfolioPage} />
-      <Route path="/admin" component={AdminPage} />
+      <Route path="/" component={App}>
+        <IndexRoute component={FrontPage}> </IndexRoute>
+        <Route path="blog" component={Blog}></Route>
+        <Route path="lab" component={Lab}></Route>
+        <Route path="portfolio" component={Portfolio}></Route>
+        <Route path="admin" component={Admin}></Route>
+        
+      </Route>
     </Router>
-  </Provider>, document.querySelector('.container'));
+  </Provider>,
+  document.querySelector('.container'));
