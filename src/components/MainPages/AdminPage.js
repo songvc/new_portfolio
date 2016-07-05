@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Loading from '../components/Admin/loading';
-import Loading from '../admin/loading';
+// import Loading from '../Admin/loading';
 
 class Admin extends Component {
   constructor(props){
@@ -13,13 +12,6 @@ class Admin extends Component {
   render() {
     return (
       <div>
-        <AdminHeader hasUser={}>
-        { loggedIn? <Loading />: <Loading />}
-      </div>
-    )
-        {  loggedIn? <Loading />: <AdminPanel>}
-
-
         // if logged in then show container
       </div>
     );
