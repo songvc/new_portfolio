@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loading from '../components/Admin/loading';
+import Loading from '../admin/loading';
 
 class Admin extends Component {
   constructor(props){
@@ -16,6 +17,12 @@ class Admin extends Component {
         { loggedIn? <Loading />: <Loading />}
       </div>
     )
+        {  loggedIn? <Loading />: <AdminPanel>}
+
+
+        // if logged in then show container
+      </div>
+    );
   }
 }
 
