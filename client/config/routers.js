@@ -19,6 +19,7 @@ const route = (
     <Route path="/blog" component={BlogPage} />
     <Route path="/lab" component={LabPage} />
     <Route path="/portfolio" component={PortfolioPage} />
+    <Route path="/admin" component={Admin} />
   </Router>
 );
 
