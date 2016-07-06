@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Quadrant from '../Quadrant';
-import SpinIcon from '../SpinIcon';
+import Quadrant from '../components/Quadrant';
+import SpinIcon from '../components/SpinIcon';
 
 class frontPage extends Component {
   render () {

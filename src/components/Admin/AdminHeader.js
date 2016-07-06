@@ -25,8 +25,8 @@ class AdminHeader extends Component {
   render() {
     return (
       <Flex className={css(styles.header)}>
-        <Box col={6}><MenuLink path='/signin'>SignIn</MenuLink></Box>
-        <Box col={6}><MenuLink path='/signout'>SignOut</MenuLink></Box>
+        <Box col={6}><MenuLink path='/admin/signin'>SignIn</MenuLink></Box>
+        <Box col={6}><MenuLink path='/admin/signout'>SignOut</MenuLink></Box>
       </Flex>
     );
   }

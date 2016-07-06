@@ -1,25 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-//MainPage Components
-import App from './components/MainPages/App';
+//Main Top-Level Components
+import App from './container/App';
 import Layout from './components/Layout';
 
-import FrontPage from './components/MainPages/FrontPage';
-import Blog from './components/MainPages/Blog';
-import Lab from './components/MainPages/Lab';
-import Portfolio from './components/MainPages/Portfolio';
-import Admin from './components/MainPages/Admin';
+import FrontPage from './container/FrontPage';
+import Blog from './container/Blog';
+import Lab from './container/Lab';
+import Portfolio from './container/Portfolio';
+import Admin from './container/Admin';
+import Signin from './components/Admin/Signin';
 
-// Call reducers
+// Configure Redux Store
 import reducers from './reducers';
 
-
-const createStoreWithMiddleware = applyMiddleware()(createStore);
-const store = createStoreWithMiddleware(reducers);
+// Create stores with middlewares & reduxDevTools
+const store = createStore(reducers, {},
+    window.devToolsExtension ? window.devToolsExtension() : undefined
+);
 
 // Configure routes
 const routes = (
@@ -33,6 +35,7 @@ const routes = (
           <Route path="portfolio" component={Portfolio} />
         </Route>
         <Route path="admin" component={Admin}>
+          <Route path='signin' component={Signin} />
         </Route>
       </Route>
     </Router>
@@ -40,6 +43,5 @@ const routes = (
 );
 
 
-// <Route path='signin' component={Signin}></Route>
 
 ReactDOM.render(routes ,document.querySelector('.container'));

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Layout from '../Layout';
-import PortfolioList from '../Portfolio/PortfolioList';
+import PortfolioList from '../components/Portfolio/PortfolioList';
 
 const portfolioData = [
   {

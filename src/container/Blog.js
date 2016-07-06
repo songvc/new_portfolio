@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Layout from '../Layout';
 import { Flex, Box } from 'reflexbox';
 
 class Blog extends Component {
