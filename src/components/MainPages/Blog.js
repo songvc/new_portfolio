@@ -6,7 +6,7 @@ class Blog extends Component {
 
   render() {
     return (
-      <Layout page='blog'>
+      <div>
         <Flex align='center'>
           <Box col={4} auto>sdfsdf</Box>
           <Box col={4} auto>sdfsdf</Box>
@@ -32,7 +32,7 @@ class Blog extends Component {
           <Box col={12} auto>sdfsdf</Box>
           <Box col={12} auto>sdfsdf</Box>
         </Flex>
-      </Layout>
+      </div>
     );
   }
 }

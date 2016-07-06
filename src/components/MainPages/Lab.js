@@ -6,9 +6,7 @@ class Lab extends Component {
 
   render() {
     return (
-      <Layout page='lab'>
-        <div>Hello</div>
-      </Layout>
+      <div>Hello</div>
     )
   }
 }

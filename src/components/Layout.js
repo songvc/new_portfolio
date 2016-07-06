@@ -36,13 +36,15 @@ class Layout extends Component {
   }
 
   render() {
-
-    const [leftMenu, rightMenu] = this.getMenus(this.props.page);
+    // const currentRouteName = this.context.router.getCurrentPathname();
+    console.log(this.props.location.pathname);
+    // console.log(currentRouteName);
+    // const [leftMenu, rightMenu] = this.getMenus(this.props.page);
 
     return (
       <OffCanvas width={300} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={'left'}>
         <OffCanvasBody style={{fontSize: '30px'}}>
-          <Header toggleMenu={this.toggleMenu} leftMenu={leftMenu} rightMenu={rightMenu} />
+          <a onClick={this.toggleMenu}>hello</a>
           {this.props.children}
         </OffCanvasBody>
         <OffCanvasMenu>
@@ -51,7 +53,9 @@ class Layout extends Component {
       </OffCanvas>
     );
   }
-
 }
+
+// <Header toggleMenu={this.toggleMenu} leftMenu={leftMenu} rightMenu={rightMenu} />
+
 
 export default Layout;

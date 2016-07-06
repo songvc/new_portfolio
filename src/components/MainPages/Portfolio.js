@@ -115,9 +115,7 @@ class Portfolio extends Component {
 
   render() {
     return (
-      <Layout page='portfolio'>
-        <PortfolioList portfolios={portfolioData}/>
-      </Layout>
+      <PortfolioList portfolios={portfolioData}/>
     );
   }
 }
