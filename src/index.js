@@ -14,14 +14,15 @@ import Lab from './components/MainPages/Lab';
 import Portfolio from './components/MainPages/Portfolio';
 import Admin from './components/MainPages/Admin';
 
+// Call reducers
 import reducers from './reducers';
+
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 const store = createStoreWithMiddleware(reducers);
 
-
-
-ReactDOM.render(
+// Configure routes
+const routes = (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
@@ -35,6 +36,10 @@ ReactDOM.render(
         </Route>
       </Route>
     </Router>
-  </Provider>,
-  document.querySelector('.container'));
-  // <Route path='signin' component={Signin}></Route>
+  </Provider>
+);
+
+
+// <Route path='signin' component={Signin}></Route>
+
+ReactDOM.render(routes ,document.querySelector('.container'));

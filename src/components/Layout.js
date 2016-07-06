@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import Header from './Header';
 import MenuLink from './MenuLink'
 import SpinMenu from './SpinMenu';
@@ -26,25 +27,24 @@ class Layout extends Component {
     // lab  -> portfolio, blog
     // portfolio -> blog, lab
     switch(page) {
-      case 'blog':
+      case '/blog':
         return ['lab', 'portfolio'];
-      case 'lab':
+      case '/lab':
         return ['blog', 'portfolio'];
-      case 'portfolio':
+      case '/portfolio':
         return ['blog', 'lab'];
     }
   }
 
   render() {
-    // const currentRouteName = this.context.router.getCurrentPathname();
-    console.log(this.props.location.pathname);
-    // console.log(currentRouteName);
-    // const [leftMenu, rightMenu] = this.getMenus(this.props.page);
+    const { pathname } = this.props.location;
+    const [ leftMenu, rightMenu ] = this.getMenus(pathname);
+
 
     return (
       <OffCanvas width={300} transitionDuration={300} isMenuOpened={this.state.isMenuOpened} position={'left'}>
         <OffCanvasBody style={{fontSize: '30px'}}>
-          <a onClick={this.toggleMenu}>hello</a>
+          <Header toggleMenu={this.toggleMenu} leftMenu={leftMenu} rightMenu={rightMenu} />
           {this.props.children}
         </OffCanvasBody>
         <OffCanvasMenu>
@@ -54,8 +54,5 @@ class Layout extends Component {
     );
   }
 }
-
-// <Header toggleMenu={this.toggleMenu} leftMenu={leftMenu} rightMenu={rightMenu} />
-
 
 export default Layout;

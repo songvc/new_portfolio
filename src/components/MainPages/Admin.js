@@ -5,7 +5,7 @@ import Signin from '../Admin/Signin';
 class Admin extends Component {
   constructor(props){
     super(props);
-    this.setState =  {
+    this.setState = {
       loggedIn: false
     }
   }
@@ -14,6 +14,7 @@ class Admin extends Component {
     return (
       <div>
         <AdminHeader />
+        {this.props.children}
       </div>
     );
   }
