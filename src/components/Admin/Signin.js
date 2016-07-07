@@ -11,6 +11,21 @@ class Signin extends Component {
     this.props.signinUser({ email, password });
   }
 
+  renderAlert() {
+    if (this.props.errorMessage) {
+      return (
+        <div className="ui error message">
+          <div className="header">
+            There was some errors with your submission
+          </div>
+          <ul className="list">
+            <li>{this.props.errorMessage}</li>
+          </ul>
+        </div>
+      )
+    }
+  }
+
   render() {
 
     const {  fields: { email, password }, handleSubmit } = this.props;
@@ -18,8 +33,9 @@ class Signin extends Component {
     return (
       <div>
         <h3 className="ui block header">
-          Signin
+          Please enter your email and password
         </h3>
+        {this.renderAlert()}
         <form className="ui form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <div className="field">
             <label>Email:</label>
@@ -29,12 +45,6 @@ class Signin extends Component {
             <label>Password</label>
             <input {...password} type="text" placeholder="Password" />
           </div>
-          <div className="field">
-            <div className="ui checkbox">
-              <input type="checkbox" tabIndex="0" className="hidden" />
-              <label>I agree to the Terms and Conditions</label>
-            </div>
-          </div>
           <button className="ui button" type="submit">Submit</button>
         </form>
       </div>
@@ -42,7 +52,11 @@ class Signin extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return { errorMessage: state.auth.error };
+}
+
 export default reduxForm({
   form: 'simple',
   fields
-}, null, actions)(Signin);
+}, mapStateToProps, actions)(Signin);
