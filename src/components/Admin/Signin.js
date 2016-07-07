@@ -32,20 +32,20 @@ class Signin extends Component {
 
     return (
       <div>
-        <h3 className="ui block header">
+        <h3 className='ui block header'>
           Please enter your email and password
         </h3>
         {this.renderAlert()}
-        <form className="ui form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-          <div className="field">
+        <form className='ui form' onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <div className='field'>
             <label>Email:</label>
-            <input {...email} type="text" placeholder="Email" />
+            <input {...email} type='text' placeholder='Email' />
           </div>
-          <div className="field">
+          <div className='field'>
             <label>Password</label>
-            <input {...password} type="text" placeholder="Password" />
+            <input {...password} type='text' placeholder='Password' />
           </div>
-          <button className="ui button" type="submit">Submit</button>
+          <button className='ui button' type='submit'>Submit</button>
         </form>
       </div>
     )

@@ -17,6 +17,7 @@ import Portfolio from './container/Portfolio';
 import Admin from './container/Admin';
 import Signin from './components/Admin/Signin';
 import Signout from './components/Admin/Signout';
+import Signup from './components/Admin/Signup';
 
 // Configure Redux Store
 import rootReducer from './reducers';
@@ -41,6 +42,7 @@ const routes = (
         <Route path="admin" component={Admin}>
           <Route path='signin' component={Signin} />
           <Route path='signout' component={Signout} />
+          <Route path='signup' component={Signup} />
 
         </Route>
       </Route>

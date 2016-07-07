@@ -8,7 +8,17 @@ class Signout extends Component {
   }
 
   render() {
-    return <div>Sorry to see you go...</div>
+    return (
+      <div className='ui info message'>
+        <i className='close icon'></i>
+        <div className='header'>
+          Thanks for visiting our website.
+        </div>
+        <ul className='list'>
+          <li>Hope to see you back again</li>
+        </ul>
+      </div>
+    )
   }
 }
 
