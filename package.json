@@ -27,6 +27,7 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "axios": "^0.12.0",
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
     "normalize.css": "^4.1.1",
@@ -39,6 +40,7 @@
     "rebass": "^0.3.0",
     "redux": "^3.0.4",
     "redux-form": "^5.3.1",
+    "redux-thunk": "^2.1.0",
     "reflexbox": "^1.1.2"
   }
 }

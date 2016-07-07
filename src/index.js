@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import reduxThunk from 'redux-Thunk';
 
 //Main Top-Level Components
 import App from './container/App';
@@ -19,9 +20,10 @@ import Signin from './components/Admin/Signin';
 import rootReducer from './reducers';
 
 // Create stores with middlewares & reduxDevTools
-const store = createStore(rootReducer, {},
-    window.devToolsExtension ? window.devToolsExtension() : undefined
-);
+const store = createStore(rootReducer, {}, compose(
+  applyMiddleware(reduxThunk),
+  window.devToolsExtension ? window.devToolsExtension() : undefined
+));
 
 // Configure routes
 const routes = (
