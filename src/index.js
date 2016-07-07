@@ -15,6 +15,7 @@ import Lab from './container/Lab';
 import Portfolio from './container/Portfolio';
 
 import Admin from './container/Admin';
+import AdminIndex from './components/Admin/AdminIndex';
 import Signin from './components/Admin/Signin';
 import Signout from './components/Admin/Signout';
 import Signup from './components/Admin/Signup';
@@ -40,6 +41,7 @@ const routes = (
           <Route path="portfolio" component={Portfolio} />
         </Route>
         <Route path="admin" component={Admin}>
+          <IndexRoute component={AdminIndex}/>
           <Route path='signin' component={Signin} />
           <Route path='signout' component={Signout} />
           <Route path='signup' component={Signup} />

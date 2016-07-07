@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import * as actions from '../../actions';
 
 class Signup extends Component {
@@ -45,7 +46,7 @@ class Signup extends Component {
 
         <div className='ui bottom attached warning message'>
           <i className='icon help'></i>
-          Already signed up? <a href='#'>Login here</a> instead.
+          Already signed up? <Link to='/admin/signin'>Login here</Link> instead.
         </div>
 
       </div>
