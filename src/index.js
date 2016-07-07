@@ -13,8 +13,10 @@ import FrontPage from './container/FrontPage';
 import Blog from './container/Blog';
 import Lab from './container/Lab';
 import Portfolio from './container/Portfolio';
+
 import Admin from './container/Admin';
 import Signin from './components/Admin/Signin';
+import Signout from './components/Admin/Signout';
 
 // Configure Redux Store
 import rootReducer from './reducers';
@@ -38,6 +40,8 @@ const routes = (
         </Route>
         <Route path="admin" component={Admin}>
           <Route path='signin' component={Signin} />
+          <Route path='signout' component={Signout} />
+
         </Route>
       </Route>
     </Router>
