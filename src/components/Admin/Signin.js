@@ -12,17 +12,23 @@ class Signin extends Component {
     const {  fields: { email, password }, handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset>
+      <form className="ui form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <div className="field">
           <label>Email:</label>
-          <input {...email} type="text"/>
-        </fieldset>
-        <fieldset>
-          <label>Password:</label>
-          <input {...password} type="text"/>
-        </fieldset>
-        <button action="submit">Sign in</button>
-      </form>      
+          <input {...email} type="text" placeholder="Email" />
+        </div>
+        <div className="field">
+          <label>Password</label>
+          <input {...password} type="text" placeholder="Password" />
+        </div>
+        <div className="field">
+          <div className="ui checkbox">
+            <input type="checkbox" tabIndex="0" className="hidden" />
+            <label>I agree to the Terms and Conditions</label>
+          </div>
+        </div>
+        <button className="ui button" type="submit">Submit</button>
+      </form>
     )
   }
 }
@@ -31,10 +37,3 @@ export default reduxForm({
   form: '',
   fields: ['email', 'password']
 })(Signin);
-
-// constructor(props){
-//   super(props);
-//   this.handleFormSubmit = this.handleFormSubmit.bind(this);
-// }
-
-// this.handleFormSubmit = this.handleFormSubmit.bind(this);

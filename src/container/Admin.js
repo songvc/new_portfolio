@@ -8,7 +8,9 @@ class Admin extends Component {
     return (
       <div>
         <AdminHeader />
-        {this.props.children}
+        <div className='ui container'>
+          {this.props.children}
+        </div>
       </div>
     );
   }

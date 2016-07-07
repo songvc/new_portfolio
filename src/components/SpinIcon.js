@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
@@ -8,7 +9,8 @@ const styles = StyleSheet.create({
     width: '60px',
     borderRadius: '30px',
     margin: '-30px',
-    textAlign: 'center'
+    textAlign: 'center',
+    cursor:  'pointer'
   },
   icon: {
     color: '#3a4145',

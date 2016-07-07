@@ -16,10 +16,10 @@ import Admin from './container/Admin';
 import Signin from './components/Admin/Signin';
 
 // Configure Redux Store
-import reducers from './reducers';
+import rootReducer from './reducers';
 
 // Create stores with middlewares & reduxDevTools
-const store = createStore(reducers, {},
+const store = createStore(rootReducer, {},
     window.devToolsExtension ? window.devToolsExtension() : undefined
 );
 

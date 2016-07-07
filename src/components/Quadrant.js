@@ -20,7 +20,7 @@ const Quadrant = () => {
       <Box sm={12} lg={6}>
         <Flex wrap className={css(styles.nested)}>
           <Box sm={12} lg={6}><SlideLink path='/twitter' color='#F2D194' icon='twitter'>Twitter</SlideLink></Box>
-          <Box sm={12} lg={6}><SlideLink path='/portfolio' color='#FFE9C0' icon='github'>Github</SlideLink></Box>
+          <Box sm={12} lg={6}><SlideLink path='/admin' color='#FFE9C0' icon='github'>Github</SlideLink></Box>
           <Box sm={12} lg={6}><SlideLink path='/portfolio' color='#C9A25B' icon='codepen'>Codepen</SlideLink></Box>
           <Box sm={12} lg={6}><SlideLink path='/portfolio' color='#9C752B' icon='envelope'>Contact</SlideLink></Box>
         </Flex>
