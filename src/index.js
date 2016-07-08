@@ -1,12 +1,15 @@
-// @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import reduxThunk from 'redux-Thunk';
 
-//Main Top-Level Components
+
+// Routing helper
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { routerMiddleware, push } from 'react-router-redux';
+import requireAuth from './components/Admin/requireAuth';
+
+// Main Components
 import App from './container/App';
 import Layout from './components/Layout';
 
@@ -22,17 +25,21 @@ import Signout from './components/Admin/Signout';
 import Signup from './components/Admin/Signup';
 import AdminMain from './components/Admin/AdminMain';
 
-// Routing Authentication helper
-import requireAuth from './components/Admin/requireAuth';
+// MiddleWare for async & routing
+import reduxThunk from 'redux-Thunk';
+const reduxRouter = routerMiddleware(browserHistory);
+const middlewares = [ reduxThunk, reduxRouter ];
 
-// Configure Redux Store
+// CombinedReducers
 import rootReducer from './reducers';
 
-// Create stores with middlewares & reduxDevTools
+// Create stores with middlewares & reduxDevTools & reducers
 const store = createStore(rootReducer, {}, compose(
-  applyMiddleware(reduxThunk),
+  applyMiddleware(...middlewares),
   window.devToolsExtension ? window.devToolsExtension() : undefined
 ));
+
+
 
 // Configure routes
 const routes = (
@@ -56,7 +63,5 @@ const routes = (
     </Router>
   </Provider>
 );
-
-
 
 ReactDOM.render(routes ,document.querySelector('.container'));

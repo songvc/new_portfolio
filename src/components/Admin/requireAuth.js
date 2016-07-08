@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // Higher Order Component that wraps regular components for requiring authentication
 // Input Components that need for authorized access
 
-export default function requireAuthentication(Component) {
+export default function requireAuthentication(ComposedComponent) {
   class Authentication extends Component {
     static contextTypes = {
       router: React.PropTypes.object
@@ -23,7 +23,7 @@ export default function requireAuthentication(Component) {
       }
     }
     render () {
-      return <Component {...this.props} />;
+      return <ComposedComponent {...this.props} />;
     }
   }
 
