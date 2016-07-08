@@ -20,7 +20,6 @@ class AdminHeader extends Component {
     return (
       <div className="ui menu">
         <Link className="item" to='/admin'>Admin Home</Link>
-        {this.props.authenticated && <Link className="item" to='/admin/post'>Post</Link>}
         <div className="right menu">
           {this.renderRightLinks()}
         </div>
@@ -28,6 +27,9 @@ class AdminHeader extends Component {
     );
   }
 }
+
+// <Link className="item" to='/admin'>Admin Home</Link>
+// {this.props.authenticated && [<Link className="item" to='/admin/post'>Post</Link>]}
 
 function mapStateToProps(state) {
   return {

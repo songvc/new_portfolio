@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import * as actions from '../../actions';
+import { reduxForm } from 'redux-form';
+
+const fields = [ 'firstname', 'lastname', 'email', 'password', 'passwordConfirm' ];
 
 class Signup extends Component {
 
   render() {
     return (
       <div>
-
         <div className='ui attached message'>
           <div className='header'>
             Welcome to our site!
@@ -28,12 +28,16 @@ class Signup extends Component {
             </div>
           </div>
           <div className='field'>
-            <label>Username</label>
-            <input placeholder='Username' type='text' />
+            <label>Email</label>
+            <input placeholder='E-mail' type='text' />
           </div>
           <div className='field'>
             <label>Password</label>
-            <input type='password' />
+            <input placeholder='Password' type='password' />
+          </div>
+          <div className='field'>
+            <label>Password Confirm</label>
+            <input placeholder='Password Confirm' type='password' />
           </div>
           <div className='inline field'>
             <div className='ui checkbox'>
@@ -43,15 +47,16 @@ class Signup extends Component {
           </div>
           <div className='ui blue submit button'>Submit</div>
         </form>
-
         <div className='ui bottom attached warning message'>
           <i className='icon help'></i>
           Already signed up? <Link to='/admin/signin'>Login here</Link> instead.
         </div>
-
       </div>
     )
   }
 }
 
-export default connect(null, actions)(Signup);
+export default reduxForm({
+  form: 'signup',
+  fields
+})(Signup);

@@ -43,7 +43,7 @@ class Signin extends Component {
           </div>
           <div className='field'>
             <label>Password</label>
-            <input {...password} type='text' placeholder='Password' />
+            <input {...password} type='password' placeholder='Password' />
           </div>
           <button className='ui button' type='submit'>Submit</button>
         </form>
