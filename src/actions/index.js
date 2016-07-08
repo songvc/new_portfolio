@@ -26,10 +26,7 @@ export function signinUser({ email, password }) {
         // - Show an error to the user
         dispatch(authError('Bad Login Info'));
       });
-
-
   };
-
 }
 
 export function authError(error) {

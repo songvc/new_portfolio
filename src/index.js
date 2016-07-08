@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-
+import { AUTH_USER } from './actions/type';
 
 // Routing helper
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { routerMiddleware, push } from 'react-router-redux';
+import { routerMiddleware, push, syncHistoryWithStore } from 'react-router-redux';
 import requireAuth from './components/Admin/requireAuth';
 
 // Main Components
@@ -39,12 +39,20 @@ const store = createStore(rootReducer, {}, compose(
   window.devToolsExtension ? window.devToolsExtension() : undefined
 ));
 
+// Sync react-router history to redux-router
+const history = syncHistoryWithStore(browserHistory, store);
 
+// check user's session token
+const token = localStorage.getItem('token');
+// If users have their token on their browser, authenticate user
+if (token) {
+  store.dispatch({ type: AUTH_USER });
+}
 
 // Configure routes
 const routes = (
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={FrontPage} />
         <Route component={Layout}>
