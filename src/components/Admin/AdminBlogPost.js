@@ -10,6 +10,10 @@ class AdminBlogPost extends Component {
             <label>Title</label>
             <input type="text" />
           </div>
+          <div className="field">
+            <label>Tags</label>
+            <input type="text" />
+          </div>
           <div className="ui icon buttons">
             <button className="ui button"><i className="align left icon"></i></button>
             <button className="ui button"><i className="align center icon"></i></button>
@@ -25,10 +29,10 @@ class AdminBlogPost extends Component {
             <label>Text</label>
             <textarea></textarea>
           </div>
-          <button class="ui primary button">
+          <button className="ui primary button">
             Post
           </button>
-          <button class="ui button">
+          <button className="ui button">
             Discard
           </button>
         </div>

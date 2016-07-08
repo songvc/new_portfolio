@@ -24,7 +24,6 @@ class AdminMain extends Component {
         </div>
         <div className="ui bottom attached segment">
           <AdminBlogPost />
-
         </div>
       </div>
     );

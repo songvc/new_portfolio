@@ -15,6 +15,13 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
+    preLoaders: [
+       {
+         test: /\.js$/,
+         exclude: /node_modules/,
+         loader: 'jshint-loader'
+       }
+    ],
     loaders: [{
       exclude: /node_modules/,
       loader: 'babel',
