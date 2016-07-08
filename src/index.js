@@ -42,7 +42,7 @@ const store = createStore(rootReducer, {}, compose(
 // Sync react-router history to redux-router
 const history = syncHistoryWithStore(browserHistory, store);
 
-// check user's session token
+// check user's session token even when page is refreshed
 const token = localStorage.getItem('token');
 // If users have their token on their browser, authenticate user
 if (token) {

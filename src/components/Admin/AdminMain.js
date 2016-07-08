@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import * as actions from '../../actions';
 import AdminBlogPost from './AdminBlogPost';
 
 class AdminMain extends Component {
+  componentWillMount() {
+    this.props.fetchMessage();
+  }
 
   render() {
     return (
@@ -38,4 +41,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(AdminMain);
+export default connect(mapStateToProps, actions)(AdminMain);
