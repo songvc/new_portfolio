@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
       border: '30px solid #3EC8AC'
     }
   }
-})
+});
 
 const SpinIcon = ({top, left}) => {
   return (
@@ -47,12 +47,12 @@ const SpinIcon = ({top, left}) => {
       style={{top, left}}>
       VS
     </span>
-  )
-}
+  );
+};
 
 SpinIcon.propTypes = {
   top: React.PropTypes.string.isRequired,
   left: React.PropTypes.string.isRequired
-}
+};
 
 export default SpinIcon;

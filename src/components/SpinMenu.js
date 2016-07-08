@@ -45,18 +45,18 @@ const styles = StyleSheet.create({
     fontSize: '36px',
     lineHeight: '60px'
   }
-})
+});
 
 const SpinMenu = ({onClick}) => {
   return (
     <div onClick={onClick} className={css(styles.container)}>
       <div className={css(styles.text)}>VS</div>
     </div>
-  )
-}
+  );
+};
 
 SpinMenu.propTypes = {
   onClick: React.PropTypes.func
-}
+};
 
 export default SpinMenu;

@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   container: {
     height: '100vh'
   }
-})
+});
 
 const VMenu = () => {
   return (
@@ -17,11 +17,11 @@ const VMenu = () => {
       <Box col={12} auto><SlideLink path='/portfolio' color='#5A86BF' icon='camera-retro'>Portfolio</SlideLink></Box>
       <Box col={12} auto><SlideLink path='/lab' color='#D95A4E' icon='archive'>Lab</SlideLink></Box>
     </Flex>
-  )
-}
+  );
+};
 
 VMenu.propTypes = {
 
-}
+};
 
 export default VMenu;

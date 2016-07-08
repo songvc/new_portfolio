@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Header from './Header';
-import MenuLink from './MenuLink'
+import MenuLink from './MenuLink';
 import SpinMenu from './SpinMenu';
 import VMenu from './VMenu';
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from 'react-offcanvas';
@@ -12,7 +12,7 @@ class Layout extends Component {
     // sets the initial state
     this.setState({
       isMenuOpened: false
-    })
+    });
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 

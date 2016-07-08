@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#545B5F'
     }
   }
-})
+});
 
 const Header = ({toggleMenu, leftMenu, rightMenu}) => {
   return (
@@ -27,13 +27,13 @@ const Header = ({toggleMenu, leftMenu, rightMenu}) => {
       <Box col={1}><MenuLink path={`/${leftMenu}`}>{leftMenu}</MenuLink></Box>
       <Box col={2}><MenuLink path={`/${rightMenu}`}>{rightMenu}</MenuLink></Box>
     </Flex>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   toggleMenu: React.PropTypes.func.isRequired,
   leftMenu: React.PropTypes.string.isRequired,
   rightMenu: React.PropTypes.string.isRequired
-}
+};
 
 export default Header;

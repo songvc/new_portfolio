@@ -52,7 +52,7 @@ class Signup extends Component {
           Already signed up? <Link to='/admin/signin'>Login here</Link> instead.
         </div>
       </div>
-    )
+    );
   }
 }
 

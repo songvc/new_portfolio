@@ -9,7 +9,7 @@ class frontPage extends Component {
         <Quadrant />
         <SpinIcon top={'50%'} left={'50%'} />
       </div>
-    )
+    );
   }
 }
 

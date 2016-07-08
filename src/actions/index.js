@@ -15,7 +15,7 @@ export function signinUser({ email, password }) {
       .then(response => {
         // If request is good...
         // - Update state to indicate user is authenticated
-        dispatch({ type: AUTH_USER })
+        dispatch({ type: AUTH_USER });
         // - Save the JWT token
         localStorage.setItem('token', response.data.token);
         // - Redirect to the route /feature
@@ -25,10 +25,10 @@ export function signinUser({ email, password }) {
         // IF request is bad...
         // - Show an error to the user
         dispatch(authError('Bad Login Info'));
-      })
+      });
 
 
-  }
+  };
 
 }
 
@@ -36,12 +36,12 @@ export function authError(error) {
   return {
     type: AUTH_ERROR,
     payload: error
-  }
+  };
 }
 
 export function signoutUser() {
   localStorage.removeItem('token');
   return {
     type: UNAUTH_USER
-  }
+  };
 }

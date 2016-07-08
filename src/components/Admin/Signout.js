@@ -18,7 +18,7 @@ class Signout extends Component {
           <li>Hope to see you back again</li>
         </ul>
       </div>
-    )
+    );
   }
 }
 

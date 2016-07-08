@@ -18,10 +18,10 @@ class PortfolioList extends Component {
             <Box col={3} key={portfolio.id}>
               <HoverImage key={portfolio.id} {...portfolio} />
             </Box>
-          )
+          );
         })}
       </Flex>
-    )
+    );
   }
 }
 

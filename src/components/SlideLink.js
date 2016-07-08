@@ -44,15 +44,15 @@ const SlideLink = ({ path, color, icon, children }) => {
       <strong className={css(styles.text)}>{children}</strong>
       <Icon className={css(styles.icon)} name={icon} size='3x'/>
     </Link>
-  )
-}
+  );
+};
 
 SlideLink.propTypes = {
   path: React.PropTypes.string.isRequired,
   color: React.PropTypes.string.isRequired,
   icon: React.PropTypes.string.isRequired,
   children: React.PropTypes.string.isRequired
-}
+};
 
 
 export default SlideLink;

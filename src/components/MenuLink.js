@@ -21,17 +21,17 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     letterSpacing: '0.1em'
   }
-})
+});
 
 const MenuLink = ({path, children}) => {
   return (
     <Link className={css(styles.menuLink, styles.text)} to={path}>{children}</Link>
-  )
-}
+  );
+};
 
 MenuLink.propTypes = {
   path: React.PropTypes.string.isRequired,
   children: React.PropTypes.string.isRequired
-}
+};
 
 export default MenuLink;

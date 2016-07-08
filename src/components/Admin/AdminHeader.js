@@ -7,12 +7,12 @@ class AdminHeader extends Component {
   renderRightLinks() {
     if (this.props.authenticated) {
       // show a link to sign output
-      return <Link className="item" to='/admin/signout'>SignOut</Link>
+      return <Link className="item" to='/admin/signout'>SignOut</Link>;
     } else {
       return [
         <Link key={1} className="item" to='/admin/signin'>SignIn</Link>,
         <Link key={2} className="item" to='/admin/signup'>SignUp</Link>
-      ]
+      ];
     }
   }
 
@@ -34,6 +34,6 @@ class AdminHeader extends Component {
 function mapStateToProps(state) {
   return {
     authenticated: state.auth.authenticated
-  }
+  };
 }
 export default connect(mapStateToProps)(AdminHeader);

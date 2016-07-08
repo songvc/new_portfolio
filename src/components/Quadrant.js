@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   nested: {
     height: '100%'
   }
-})
+});
 
 const Quadrant = () => {
   return (
@@ -27,7 +27,7 @@ const Quadrant = () => {
       </Box>
       <Box sm={12} lg={6}><SlideLink path='/lab' color='#D95A4E' icon='archive'>Lab</SlideLink></Box>
     </Flex>
-  )
-}
+  );
+};
 
 export default Quadrant;

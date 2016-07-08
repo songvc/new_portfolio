@@ -6,7 +6,7 @@ class Lab extends Component {
   render() {
     return (
       <div>Hello</div>
-    )
+    );
   }
 }
 

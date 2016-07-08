@@ -36,7 +36,7 @@ const routes = (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRoute component={FrontPage}/>
+        <IndexRoute component={FrontPage} />
         <Route component={Layout}>
           <Route path="blog" component={Blog} />
           <Route path="lab" component={Lab} />

@@ -22,7 +22,7 @@ class Signin extends Component {
             <li>{this.props.errorMessage}</li>
           </ul>
         </div>
-      )
+      );
     }
   }
 
@@ -48,7 +48,7 @@ class Signin extends Component {
           <button className='ui button' type='submit'>Submit</button>
         </form>
       </div>
-    )
+    );
   }
 }
 

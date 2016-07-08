@@ -94,14 +94,14 @@ const HoverImage = ({ path, name, src, description }) => {
         <a classname={css(styles.overlay)} href={path}></a>
       </figcaption>
     </figure>
-  )
-}
+  );
+};
 
 HoverImage.propTypes = {
   path: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
   src: React.PropTypes.string.isRequired,
   description: React.PropTypes.string.isRequired
-}
+};
 
 export default HoverImage;
