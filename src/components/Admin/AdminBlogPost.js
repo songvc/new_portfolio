@@ -8,11 +8,11 @@ class AdminBlogPost extends Component {
         <div className="ui form">
           <div className="field">
             <label>Title</label>
-            <input type="text" />
+            <input type="text" autoComplete />
           </div>
           <div className="field">
             <label>Tags</label>
-            <input type="text" />
+            <input type="text" autoComplete />
           </div>
           <div className="ui icon buttons">
             <button className="ui button"><i className="align left icon"></i></button>

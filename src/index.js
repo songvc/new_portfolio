@@ -22,6 +22,9 @@ import Signout from './components/Admin/Signout';
 import Signup from './components/Admin/Signup';
 import AdminMain from './components/Admin/AdminMain';
 
+// Routing Authentication helper
+import RequireAuth from './components/Admin/requireAuth';
+
 // Configure Redux Store
 import rootReducer from './reducers';
 
@@ -47,8 +50,7 @@ const routes = (
           <Route path='signin' component={Signin} />
           <Route path='signout' component={Signout} />
           <Route path='signup' component={Signup} />
-          <Route path='main' component={AdminMain} />
-
+          <Route path='main' component={requireAuth(AdminMain)} />
         </Route>
       </Route>
     </Router>

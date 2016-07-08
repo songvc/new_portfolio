@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import AdminBlogPost from './AdminBlogPost';
 
 class AdminMain extends Component {
@@ -30,4 +32,10 @@ class AdminMain extends Component {
   }
 }
 
-export default AdminMain;
+function mapStateToProps(state) {
+  return {
+    authenticated: state.auth.authenticated
+  };
+}
+
+export default connect(mapStateToProps)(AdminMain);

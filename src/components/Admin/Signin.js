@@ -39,7 +39,7 @@ class Signin extends Component {
         <form className='ui form' onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
           <div className='field'>
             <label>Email:</label>
-            <input {...email} type='text' placeholder='Email' />
+            <input {...email} type='text' placeholder='Email' autoComplete='on' />
           </div>
           <div className='field'>
             <label>Password</label>

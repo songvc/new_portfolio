@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { reduxForm } from 'redux-form';
+import * as actions from '../../actions';
 
 const fields = [ 'firstname', 'lastname', 'email', 'password', 'passwordConfirm' ];
 
@@ -29,15 +30,15 @@ class Signup extends Component {
           </div>
           <div className='field'>
             <label>Email</label>
-            <input placeholder='E-mail' type='text' />
+            <input placeholder='E-mail' type='text' {...email} />
           </div>
           <div className='field'>
             <label>Password</label>
-            <input placeholder='Password' type='password' />
+            <input placeholder='Password' type='password' {...password}/>
           </div>
           <div className='field'>
             <label>Password Confirm</label>
-            <input placeholder='Password Confirm' type='password' />
+            <input placeholder='Password Confirm' type='password' {...passwordConfirm}/>
           </div>
           <div className='inline field'>
             <div className='ui checkbox'>
