@@ -23,7 +23,7 @@ import Signup from './components/Admin/Signup';
 import AdminMain from './components/Admin/AdminMain';
 
 // Routing Authentication helper
-import RequireAuth from './components/Admin/requireAuth';
+import requireAuth from './components/Admin/requireAuth';
 
 // Configure Redux Store
 import rootReducer from './reducers';

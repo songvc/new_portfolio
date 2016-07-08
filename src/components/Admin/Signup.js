@@ -8,6 +8,8 @@ const fields = [ 'firstname', 'lastname', 'email', 'password', 'passwordConfirm'
 class Signup extends Component {
 
   render() {
+    const {  fields: { firstname, lastname, email, password, passwordConfirm }, handleSubmit } = this.props;
+
     return (
       <div>
         <div className='ui attached message'>
@@ -43,7 +45,7 @@ class Signup extends Component {
           <div className='inline field'>
             <div className='ui checkbox'>
               <input type='checkbox' id='terms' />
-              <label for='terms'>I agree to the terms and conditions</label>
+              <label>I agree to the terms and conditions</label>
             </div>
           </div>
           <div className='ui blue submit button'>Submit</div>

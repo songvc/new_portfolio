@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// Higher Order Component that takes wraps regular components for requiring authentication
+// Higher Order Component that wraps regular components for requiring authentication
 // Input Components that need for authorized access
 
-export function requireAuthentication(Component) {
+export default function requireAuthentication(Component) {
   class Authentication extends Component {
     static contextTypes = {
       router: React.PropTypes.object
@@ -19,7 +19,7 @@ export function requireAuthentication(Component) {
 
     componentWillUpdate(nextProps) {
       if (!nextProps.authenticated) {
-        this.context.router.push('/admin')
+        this.context.router.push('/admin');
       }
     }
     render () {
