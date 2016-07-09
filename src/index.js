@@ -23,7 +23,10 @@ import AdminIndex from './components/Admin/AdminIndex';
 import Signin from './components/Admin/Signin';
 import Signout from './components/Admin/Signout';
 import Signup from './components/Admin/Signup';
-import AdminMain from './components/Admin/AdminMain';
+
+import Dashboard from './components/Dashboard/Dashboard';
+import Post from './components/Dashboard/Post';
+
 
 // MiddleWare for async & routing
 import reduxThunk from 'redux-Thunk';
@@ -65,7 +68,9 @@ const routes = (
           <Route path='signin' component={Signin} />
           <Route path='signout' component={Signout} />
           <Route path='signup' component={Signup} />
-          <Route path='main' component={requireAuth(AdminMain)} />
+          <Route path='dashboard' component={requireAuth(Dashboard)}>
+
+          </Route>
         </Route>
       </Route>
     </Router>
