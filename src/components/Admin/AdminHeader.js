@@ -3,6 +3,18 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 class AdminHeader extends Component {
+  renderLeftLinks() {
+    if (this.props.authenticated) {
+      return [
+        <Link key={1} className="item" to='/admin/dashboard'>Home</Link>,
+        <Link key={2} to='/admin/post' className="item ui icon button">
+          <i className="plus icon"></i>
+        </Link>
+      ];
+    } else {
+      return <Link className="item" to='/admin'>Admin Home</Link>;
+    }
+  }
 
   renderRightLinks() {
     if (this.props.authenticated) {
@@ -19,7 +31,7 @@ class AdminHeader extends Component {
   render() {
     return (
       <div className="ui menu">
-        <Link className="item" to='/admin'>Admin Home</Link>
+          {this.renderLeftLinks()}
         <div className="right menu">
           {this.renderRightLinks()}
         </div>
@@ -27,9 +39,6 @@ class AdminHeader extends Component {
     );
   }
 }
-
-// <Link className="item" to='/admin'>Admin Home</Link>
-// {this.props.authenticated && [<Link className="item" to='/admin/post'>Post</Link>]}
 
 function mapStateToProps(state) {
   return {

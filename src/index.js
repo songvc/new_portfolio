@@ -25,7 +25,7 @@ import Signout from './components/Admin/Signout';
 import Signup from './components/Admin/Signup';
 
 import Dashboard from './components/Dashboard/Dashboard';
-import Post from './components/Dashboard/Post';
+import PostEditor from './components/Dashboard/PostEditor';
 
 
 // MiddleWare for async & routing
@@ -68,9 +68,8 @@ const routes = (
           <Route path='signin' component={Signin} />
           <Route path='signout' component={Signout} />
           <Route path='signup' component={Signup} />
-          <Route path='dashboard' component={requireAuth(Dashboard)}>
-
-          </Route>
+          <Route path='dashboard' component={requireAuth(Dashboard)} />
+          <Route path='post' component={PostEditor} />
         </Route>
       </Route>
     </Router>
