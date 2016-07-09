@@ -11,33 +11,18 @@ class AdminMain extends Component {
   render() {
     return (
       <div>
-        <div className="ui top attached tabular menu">
-          <a className="active item">
-            Blog
-          </a>
-          <a className="item">
-            Portfolio
-          </a>
-          <a className="item">
-            Lab
-          </a>
-          <div className="right menu">
-            <div className="item">
-
-            </div>
-          </div>
-        </div>
-        <div className="ui bottom attached segment">
-          <AdminBlogPost />
-        </div>
+        {this.props.message}
       </div>
     );
   }
 }
 
+// <AdminBlogPost />
+
+
 function mapStateToProps(state) {
   return {
-    authenticated: state.auth.authenticated
+    message: state.auth.message
   };
 }
 

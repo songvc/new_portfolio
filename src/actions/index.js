@@ -3,7 +3,8 @@ import { browserHistory } from 'react-router';
 import {
   AUTH_USER,
   UNAUTH_USER,
-  AUTH_ERROR
+  AUTH_ERROR,
+  FETCH_MESSAGE
  } from './type';
 
 const ROOT_URL = 'http://localhost:3090';
@@ -43,13 +44,18 @@ export function signoutUser() {
   };
 }
 
+// make authorized request to restricted endpoints, put token in the header's authorization section
 export function fetchMessage() {
+
   return function(dispatch) {
     axios.get(ROOT_URL, {
       headers: { authorization: localStorage.getItem('token') }
     })
-      .then(response =>{
-        console.log(response);
+      .then(response => {
+        dispatch({
+          type: FETCH_MESSAGE,
+          payload: response.data.message
+        });
       })
       .catch(() => {
         console.log('error');

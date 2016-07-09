@@ -12,7 +12,7 @@ class Signin extends Component {
   }
 
   renderAlert() {
-    if (this.props.errorMessage) {
+    if (this.props.errorMessage && !this.props.authenticated) {
       return (
         <div className="ui error message">
           <div className="header">
@@ -53,7 +53,10 @@ class Signin extends Component {
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
+  return {
+    errorMessage: state.auth.error,
+    authenticated: state.auth.authenticated
+   };
 }
 
 export default reduxForm({
