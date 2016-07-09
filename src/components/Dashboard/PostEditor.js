@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import CodeMirror from 'react-codemirror';
+import 'codemirror/mode/markdown/markdown';
 
 class Post extends Component {
 
