@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import { reduxForm } from 'redux-form';
+const fields = [ 'title', 'tags', 'text' ];
 
 class Post extends Component {
 
   render() {
+    const { fields: { title, tags, text }, handleSubmit }  = this.props;
+
     return (
       <div>
         <div className="ui form">
           <div className="field">
             <label>Title</label>
-            <input type="text" autoComplete />
+            <input type="text" {...title} autoComplete />
           </div>
           <div className="field">
             <label>Tags</label>
-            <input type="text" autoComplete />
+            <input type="text" {...tags} autoComplete />
           </div>
           <div className="ui icon buttons">
             <button className="ui button"><i className="align left icon"></i></button>
@@ -41,4 +45,7 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default reduxForm({
+  form: 'Post',
+  fields,
+})(Post);

@@ -60,6 +60,6 @@ function mapStateToProps(state) {
 }
 
 export default reduxForm({
-  form: 'simple',
+  form: 'Signin',
   fields
 }, mapStateToProps, actions)(Signin);
