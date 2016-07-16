@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
-const fields = [ 'title', 'tags', 'text' ];
+const fields = [ 'title', 'tags', 'content' ];
 
 class Post extends Component {
 
   render() {
-    const { fields: { title, tags, text }, handleSubmit }  = this.props;
+    const { fields: { title, tags, content }, handleSubmit }  = this.props;
 
     return (
       <div>
