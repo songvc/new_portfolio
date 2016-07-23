@@ -20,6 +20,27 @@ class Blog extends Component {
           <Box col={1} auto>sdfsdf</Box>
         </Flex>
 
+        <Flex align='center'>
+          <Box col={8} auto>sdfsdf</Box>
+          <Box col={2} auto>sdfsdf</Box>
+          <Box col={1} auto>sdfsdf</Box>
+          <Box col={1} auto>sdfsdf</Box>
+        </Flex>
+
+        <Flex align='center'>
+          <Box col={8} auto>sdfsdf</Box>
+          <Box col={2} auto>sdfsdf</Box>
+          <Box col={1} auto>sdfsdf</Box>
+          <Box col={1} auto>sdfsdf</Box>
+        </Flex>
+
+        <Flex align='center'>
+          <Box col={8} auto>sdfsdf</Box>
+          <Box col={2} auto>sdfsdf</Box>
+          <Box col={1} auto>sdfsdf</Box>
+          <Box col={1} auto>sdfsdf</Box>
+        </Flex>
+
         <Flex>
           <Box col={6} auto>sdfsdf</Box>
           <Box col={6} auto>sdfsdf</Box>
