@@ -9,6 +9,18 @@ class PostPreview extends Component {
         <h5>Output</h5>
         <div dangerouslySetInnerHTML={{ __html: rawHTML}}></div>
       </div>
+      <div className="col-xs-4">
+        <h5>Output</h5>
+        <div dangerouslySetInnerHTML={{ __html: rawHTML}}></div>
+      </div>
+      <div className="col-xs-4">
+        <h5>Output</h5>
+        <div dangerouslySetInnerHTML={{ __html: rawHTML}}></div>
+      </div>
+      <div className="col-xs-4">
+        <h5>Output</h5>
+        <div dangerouslySetInnerHTML={{ __html: rawHTML}}></div>
+      </div>
     )
   }
 }
