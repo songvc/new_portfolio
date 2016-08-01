@@ -16,7 +16,7 @@ class Signup extends Component {
           <div className='header'>
             Welcome to our site!
           </div>
-          <p>Fill out the form below to sign-up for a new account</p>
+          <p>Fill out the form below to sign-up for a new account.</p>
         </div>
 
         <form className='ui form attached fluid segment'>

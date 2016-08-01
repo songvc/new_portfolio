@@ -21,7 +21,7 @@ class Blog extends Component {
         </Flex>
 
         <Flex align='center'>
-          <Box col={8} auto>sdfsdf</Box>
+          <Box col={8} auto>sgodfsdf</Box>
           <Box col={2} auto>sdfsdf</Box>
           <Box col={1} auto>sdfsdf</Box>
           <Box col={1} auto>sdfsdf</Box>
